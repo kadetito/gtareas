@@ -208,7 +208,9 @@ a.article:hover {
 
 
 .alzador{height:145px;}
-
+@media only all and (max-height:40em) { 
+	.alzador{height:105px;}
+}
 .btn-primary  {
   padding: 10px ;
   padding-top:13px;
