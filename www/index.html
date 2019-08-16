@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+	<meta http-equiv="Content-Security-Policy" content=" media-src *; img-src 'self' data: content:;">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+    <title>gTareas</title>
+	<script src='js/jquery-2.2.4.min.js'></script>  	
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/loader.css">
+	<link rel="stylesheet" href="css/estilo.css">
+	<script>
+		$(window).load(function(){
+		    $('.sk-fading-circle-back').fadeOut(100);
+		});
+	</script>
+</head>
+
+<body class="pt-5"><div class="sk-fading-circle-back">
+	  <div class="sk-fading-circle">
+		  <div class="sk-circle1 sk-circle"></div>
+		  <div class="sk-circle2 sk-circle"></div>
+		  <div class="sk-circle3 sk-circle"></div>
+		  <div class="sk-circle4 sk-circle"></div>
+		  <div class="sk-circle5 sk-circle"></div>
+		  <div class="sk-circle6 sk-circle"></div>
+		  <div class="sk-circle7 sk-circle"></div>
+		  <div class="sk-circle8 sk-circle"></div>
+		  <div class="sk-circle9 sk-circle"></div>
+		  <div class="sk-circle10 sk-circle"></div>
+		  <div class="sk-circle11 sk-circle"></div>
+		  <div class="sk-circle12 sk-circle"></div>
+	  </div>
+	</div>   
+	
+	<!-- /////TOP y FOOTER /////-->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#"><img src="img/logogtareas.png" alt="" /></a>
+      <button class="navbar-toggler"  id="sidebarCollapse" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+        <nav class="navbar_foot fixed-bottom navbar-expand-sm navbar-dark bg-dark text-center">
+
+      <a href="#section-1" class="js-anchor-link btn btn-primary" role="button">
+        <i class="fas fa-tasks"></i>
+      </a>
+      <a href="#section-2" class="js-anchor-link btn btn-primary" role="button">
+        <i class="fas fa-box-open"></i>
+      </a>
+     <a href="#section-3" class="js-anchor-link btn btn-primary" role="button">
+        <i class="fas fa-clock"></i>
+      </a>
+      <a href="#section-4" class="js-anchor-link btn btn-primary" role="button">
+        <i class="fas fa-envelope-open-text"></i>
+      </a>
+    </nav>
+	<!-- /////TOP y FOOTER /////-->
+    	
+<!-- Page Content  -->
+<div id="content">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="sidebar-header">
+                <p>Nombre empleado</p>
+                <p>Núm: 883675639</p>
+            </div>
+            <ul class="list-unstyled components">
+				<li><a href="">Empleado</a></li>
+				<li><a href="entradas">Tareas Pendientes</a></li>
+				<li><a href="salidas">Tareas realizadas</a></li>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Material adquirido</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#section-1" class="js-anchor-link">Material pendiente</a>
+                        </li>
+                        <li>
+                            <a href="#section-2" class="js-anchor-link">Material devuelto</a>
+                        </li>
+                    </ul>
+                </li>
+				<li><a href="salidas">Partes</a></li>
+				<li><a href="salidas">Control de Horarios</a></li>
+				<li><a href="salidas">Mensajes</a></li>
+				<li><a href="salidas">Facturas</a></li>
+				<li><a href="salidas">Albaranes</a></li>
+				<li><a href="salidas">Configuración</a></li>
+            </ul>
+        </nav>
+
+<!-- //
+<!--// SECCION 1 
+<!--// -->
+	
+	<div  class="section"><div class="alzador" id="section-1"></div>
+	  <h3>Tareas pendientes</h3>
+<div class="card">
+  <div class="card-body">Basic card</div>
+</div>
+<div class="card">
+  <div class="card-body">Basic card</div>
+</div>
+<div class="card">
+  <div class="card-body">Basic card</div>
+</div>
+<div class="card">
+  <div class="card-body">Basic card</div>
+</div>
+	 <hr />
+<div class="card">
+  <div class="card-body"><h5>Teléfonos rápidos</h5><p>Secretaría: 973 764 874</p></div>
+</div>
+	</div>
+<!-- //
+<!--// fin SECCION 1 
+<!--// -->
+
+
+
+
+<div  class="section"><div class="alzador"  id="section-2"></div>
+  <h3>Section 2</h3>
+  <a href="#section-3" class="js-anchor-link">Go to section 3</a>
+</div>
+
+<div class="section" ><div class="alzador"  id="section-3"></div>
+  <h3>Section 3</h3>
+  <a href="#section-1" class="js-anchor-link">Back to section 1</a>
+</div>
+<div class="section" ><div class="alzador"  id="section-4"></div>
+  <h3>Section 4</h3>
+  <a href="#section-1" class="js-anchor-link">Back to section 1</a>
+</div>
+</div>
+
+<div class="overlay"></div>
+
+    
+  <script src="js/d1fa0d334c.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="js/tether.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+		<script src="js/includehtml.js"></script>
+		<script src='js/jquery.validate.js'></script>
+		<script src="js/jquery.cookie-1.3.1.js"></script>
+		<script>
+includeHTML();
+</script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+        
+        /*
+    	Smooth scroll functionality for anchor links (animates the scroll
+    	rather than a sudden jump in the page)
+    */
+    $('.js-anchor-link').click(function(e){
+      e.preventDefault();
+      var target = $($(this).attr('href'));
+      if(target.length){
+        var scrollTo = target.offset().top;
+        $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+      }
+    });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
