@@ -39,16 +39,16 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "HelloCordova"
+      "PACKAGE_NAME": "GtareasCordova"
     },
     "cordova-plugin-camera": {
-      "PACKAGE_NAME": "HelloCordova"
+      "PACKAGE_NAME": "GtareasCordova"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "HelloCordova"
+      "PACKAGE_NAME": "GtareasCordova"
     },
     "cordova-plugin-progressdialog": {
-      "PACKAGE_NAME": "HelloCordova"
+      "PACKAGE_NAME": "GtareasCordova"
     }
   },
   "dependent_plugins": {},
