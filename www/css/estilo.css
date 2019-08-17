@@ -203,18 +203,18 @@ a.article:hover {
     transition: all 0.3s;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 0;scroll-snap-type: y mandatory;
 }
 
 
 .alzador{height:105px;}
 @media only all and (max-height:40em) { 
-	.alzador{height:25px;}
+	.alzador{height:85px;}
 }
 
 .alzador2{height:65px;}
 @media only all and (max-height:40em) { 
-	.alzador2{height:25px;}
+	.alzador2{height:85px;}
 }
 
 .btn-primary  {
