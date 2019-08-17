@@ -207,10 +207,16 @@ a.article:hover {
 }
 
 
-.alzador{height:145px;}
+.alzador{height:105px;}
 @media only all and (max-height:40em) { 
-	.alzador{height:105px;}
+	.alzador{height:25px;}
 }
+
+.alzador2{height:65px;}
+@media only all and (max-height:40em) { 
+	.alzador2{height:25px;}
+}
+
 .btn-primary  {
   padding: 10px ;
   padding-top:13px;
