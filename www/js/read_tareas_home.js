@@ -30,15 +30,8 @@ var app = {
 	onSuccess: function(data) {
 		var items = [];
 		$.each(data, function(key, val){
-			
-			
-			
+					
 			items.push('<div class="card"><div class="card-body"><a href="' + app.posts_url + val.id + '">' + val.id + ' - ' +val.title + '</a></div></div>');
-			
-			
-			
-
-			
 			
 		});
 		$('#posts').html(items.join('<br/>'));
