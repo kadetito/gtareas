@@ -51,6 +51,14 @@ module.exports = [
         "clobbers": [
             "cordova.plugin.progressDialog"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-restful/www/RESTful.js",
+        "id": "cordova-plugin-restful.RESTful",
+        "pluginId": "cordova-plugin-restful",
+        "clobbers": [
+            "cordova.plugins.RESTful"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -59,7 +67,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-camera": "4.1.0",
     "cordova-plugin-statusbar": "2.4.3",
-    "cordova-plugin-progressdialog": "2.0.1"
+    "cordova-plugin-progressdialog": "2.0.1",
+    "cordova-plugin-restful": "0.0.3"
 }
 // BOTTOM OF METADATA
 });

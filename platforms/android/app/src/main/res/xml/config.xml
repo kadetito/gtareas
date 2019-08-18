@@ -33,4 +33,7 @@
     <preference name="loglevel" value="DEBUG" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="LoadingDialog" value="@string/loading" />
+    <feature name="RESTful">
+        <param name="android-package" value="cordova.plugin.restful.RESTful" />
+    </feature>
 </widget>

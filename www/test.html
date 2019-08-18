@@ -1,40 +1,141 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
+<head>
+	<title>Submitting SOAP Requests With jQuery</title>
+	<script type="text/javascript" src="jquery-2.2.4.min.js"></script>
+	<script type="text/javascript">
+
+		// When the DOM is ready, initialize the script.
+		jQuery(function( $ ){
+
+			// Get a handle on our SOAP template.
+			var soapTemplate = $( "#soap-template" );
+
+			// Get a handle on our form.
+			var form = $( "form:first" );
+
+			// Get a handle on our zip code input field.
+			var zip = $( "#zip" );
+
+			// Get a hand on our city and state place holders.
+			var city = $( "#city" );
+			var state = $( "#state" );
+
+
+			// Bind the form submission to re-route through our
+			// SOAP-based AJAX request.
+			form.submit(
+				function( event ){
+					// Prevent the default submit.
+					event.preventDefault();
+					event.stopPropagation();
+
+					// Create our SOAP body content based off of
+					// the template.
+					var soapBody = soapTemplate.html().replace(
+						new RegExp( "\\$\\{[^}]+\\}", "i" ),
+						zip.val()
+					);
+
+					// Trim the SOAP body so that we don't get any
+					// XML prolog errors.
+					soapBody = $.trim( soapBody );
+
+					// Post SOAP request.
+					$.ajax({
+						type: "post",
+						url: "http://www.webentorn.com/gtareas/frontend/www/soap_proxy.cfm",
+						contentType: "text/xml",
+						data: soapBody,
+						dataType: "xml",
+						processData: false,
+						beforeSend: function( xhr ){
+							// Pass the target URL onto the proxy.
+							xhr.setRequestHeader(
+								"SOAPTarget",
+								"http://www.webservicex.net/uszip.asmx"
+							);
+
+							// Pass the action onto the proxy.
+							xhr.setRequestHeader(
+								"SOAPAction",
+								"http://www.webserviceX.NET/GetInfoByZIP"
+							);
+						},
+						success: function( response ){
+							// Get a jQuery-ized version of the response.
+							var xml = $( response );
+
+							// Populate the city. NOTE: These
+							// node names are case-sensitive and
+							// have to be uppercase.
+							city.text(
+								xml.find( "CITY" ).text()
+							);
+
+							// Populate the state. NOTE: These
+							// node names are case-sensitive and
+							// have to be uppercase.
+							state.text(
+								xml.find( "STATE" ).text()
+							);
+						},
+						error: function(){
+							console.log( "ERROR", arguments );
+						}
+					});
+
+				}
+			);
+
+		});
+
+	</script>
+</head>
 <body>
 
-<p><button onclick="loadXMLDoc()">Get CD info</button></p>
+	<h1>
+		Submitting SOAP Requests With jQuery
+	</h1>
 
-<table id="demo" border="1">
-<tr><th>Artist</th><th>Title</th></tr>
-</table>
+	<form>
 
-<script>
-function loadXMLDoc() {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
-    }
-  };
-  xmlhttp.open("GET", "cd_catalog.xml" , true);
-  xmlhttp.send();
-}
+		<p>
+			Zip Code:
+			<input id="zip" type="text" size="20" />
+			<input type="submit" value="Get Info" />
+		</p>
 
-function myFunction(xml) {
-  var x, i, xmlDoc, table;
-  xmlDoc = xml.responseXML;
-  table = "<tr><th>Artist</th><th>Title</th></tr>";
-  x = xmlDoc.getElementsByTagName("CD")
-  for (i = 0; i < x.length; i++) { 
-    table += "<tr><td>" + 
-    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
-    "</td></tr>";
-  }
-  document.getElementById("demo").innerHTML = table;
-}
-</script>
+		<p>
+			City: <span id="city"> ... </span><br />
+			State: <span id="state"> ... </span>
+		</p>
+
+	</form>
+
+	<!--
+		This is the SOAP template that we will use when making
+		our SOAP POST to the server (ColdFusion SOAP Proxy).
+	-->
+	<script id="soap-template" type="application/soap-template">
+
+		<?xml version="1.0" encoding="utf-8"?>
+		<soap:Envelope
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+
+			<soap:Body>
+
+				<GetInfoByZIP xmlns="http://www.webserviceX.NET">
+					<USZip>${zip}</USZip>
+				</GetInfoByZIP>
+
+			</soap:Body>
+
+		</soap:Envelope>
+
+	</script>
 
 </body>
 </html>

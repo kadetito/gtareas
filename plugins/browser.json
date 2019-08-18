@@ -18,6 +18,9 @@
     },
     "cordova-plugin-progressdialog": {
       "PACKAGE_NAME": "io.cordova.gtareascordova"
+    },
+    "cordova-plugin-restful": {
+      "PACKAGE_NAME": "io.cordova.gtareascordova"
     }
   },
   "dependent_plugins": {}
