@@ -167,6 +167,14 @@ includeHTML();
       }
     });
     </script>
+        <script src="js/pulltorefresh.js"></script>
+    <script>
+      /* global PullToRefresh */
+      PullToRefresh.init({
+        mainElement: 'body',
+        onRefresh: function() {  }
+      });
+    </script>
 </body>
 
 </html>
