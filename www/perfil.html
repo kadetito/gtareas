@@ -172,7 +172,7 @@ includeHTML();
       /* global PullToRefresh */
       PullToRefresh.init({
         mainElement: 'body',
-        onRefresh: function() {  }
+        onRefresh: function() {window.location.reload();}
       });
     </script>
 </body>
