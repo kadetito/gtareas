@@ -68,6 +68,7 @@ $(function(){
         })
             .done(function(res){
                 $("#verimagen").html("Respuesta: " + res);
+                window.history.go(-2);
             });
     });
 });
