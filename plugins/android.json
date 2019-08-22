@@ -22,6 +22,10 @@
     },
     "cordova-plugin-restful": {
       "PACKAGE_NAME": "io.cordova.gtareascordova"
+    },
+    "cordova-plugin-camera-preview": {
+      "ANDROID_SUPPORT_LIBRARY_VERSION": "26+",
+      "PACKAGE_NAME": "io.cordova.gtareascordova"
     }
   },
   "dependent_plugins": {}

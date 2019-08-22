@@ -2,7 +2,7 @@
 
 platform :ios, '9.0'
 
-target 'C:\Users\Rafa\Desktop\cordo\platforms\ios\GtareasCordova' do
-	project 'C:\Users\Rafa\Desktop\cordo\platforms\ios\GtareasCordova.xcodeproj'
+target 'C:\AppServ\www\gtareas\frontend\platforms\ios\gTareas' do
+	project 'C:\AppServ\www\gtareas\frontend\platforms\ios\gTareas.xcodeproj'
 
 end

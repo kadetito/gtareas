@@ -33,11 +33,11 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-statusbar.statusbar",
-      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-      "pluginId": "cordova-plugin-statusbar",
+      "id": "cordova-plugin-camera-preview.CameraPreview",
+      "file": "plugins/cordova-plugin-camera-preview/www/CameraPreview.js",
+      "pluginId": "cordova-plugin-camera-preview",
       "clobbers": [
-        "window.StatusBar"
+        "CameraPreview"
       ]
     },
     {
@@ -47,12 +47,30 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.plugin.progressDialog"
       ]
+    },
+    {
+      "id": "cordova-plugin-restful.RESTful",
+      "file": "plugins/cordova-plugin-restful/www/RESTful.js",
+      "pluginId": "cordova-plugin-restful",
+      "clobbers": [
+        "cordova.plugins.RESTful"
+      ]
+    },
+    {
+      "id": "cordova-plugin-statusbar.statusbar",
+      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+      "pluginId": "cordova-plugin-statusbar",
+      "clobbers": [
+        "window.StatusBar"
+      ]
     }
   ];
   module.exports.metadata = {
-    "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-camera": "4.1.0",
+    "cordova-plugin-camera-preview": "0.11.0",
+    "cordova-plugin-progressdialog": "2.0.1",
+    "cordova-plugin-restful": "0.0.3",
     "cordova-plugin-statusbar": "2.4.3",
-    "cordova-plugin-progressdialog": "2.0.1"
+    "cordova-plugin-whitelist": "1.3.4"
   };
 });

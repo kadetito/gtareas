@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+	<meta http-equiv="Content-Security-Policy" content=" media-src *; img-src 'self' data: content:;">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+    <title>gTareas</title>
+	<script src='js/jquery-2.2.4.min.js'></script>  
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/loader.css">
+	<link rel="stylesheet" href="css/estilo.css">
+	<script>
+		$(window).load(function(){
+		    $('.sk-fading-circle-back').fadeOut(100);
+		});
+	</script>
+
+
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body style="background:transparent !important;"> 
+
+  	<div class="pictures" style="margin-top:65px;z-index:-10 !important">
+      <p><img id="originalPicture" style="width:100%"  src="img/trans.png"/></p>
+    </div>
+	  
+
+<div class="controls" >
+      <div style="display:none">
+      <div class="block">
+        <button class="btn btn-default massfhcama groddo  biffcama" id="startCameraAboveButton"><i class="fa fa-power-off fa-2x" aria-hidden="true"></i></button>
+      	<button class="btn btn-default massfhcama groddo  biffcama" id="stopCameraButton"><i class="fa fa-stop-circle fa-2x" aria-hidden="true"></i></button>
+      </div>
+      </div>
+
+      <div class="block">
+      	<button class="btn btn-default massfhcama groddo  biffcama" id="takePictureButton"><i class="fa fa-camera " aria-hidden="true"></i></button>
+        <div style="display:none"><button class="btn btn-default massfhcama groddo  biffcama" id="switchCameraButton"><i class="fa fa-repeat fa-2x"  aria-hidden="true"></i></button></div>
+        <button class="btn btn-default massfhcama groddo  biffcama" id="OKFoto">OK</button>
+				<div style="display:none">
+				<button id="startCameraBelowButton">Start Camera Behind HTML</button>
+				<button id="changePreviewSize">Change Preview Size</button>
+				<button id="hideButton">Hide</button>
+				<button id="showButton">Show</button>
+				<button id="showSupportedPictureSizes">Supported Picture Sizes</button>
+				</div>
+
+
+				<div class="col-xs-6" style="display:none">
+					<select id="selectFlashMode" class="form-control">
+						      <option selected  value="off">Flash</option>
+			            <option value="off">off</option>
+			            <option value="on">on</option>
+			            <option value="auto">auto</option>
+			            <option value="torch">linterna</option>
+			          </select>
+			  </div>
+ 
+
+      </div>
+</div>
+
+    
+
+
+
+
+     <script src="js/d1fa0d334c.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+$("#menu-toggle").click(function(e) {
+	e.preventDefault();
+	$("#wrapper").toggleClass("active");
+});
+
+</script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/CameraPreview.js"></script>
+    <script type="text/javascript" src="js/camara.js"></script>
+    <script>
+
+document.getElementById('startCameraAboveButton').addEventListener('click', this.startCameraAbove, false);
+		
+		 document.getElementById('OKFoto').addEventListener('click', 
+			   function() {
+					// Convertimos imagen capturada a elemento de la app
+					var img 	= document.getElementById("originalPicture");
+			 		var canvas 	= document.createElement('canvas');
+					var ctx 	= canvas.getContext("2d");
+					canvas.width = img.width;
+					canvas.height = img.height;
+					ctx.drawImage(img, 0, 0, img.width, img.height);
+					var dataurl = canvas.toDataURL("image/png");
+						
+					// lo grabamos en la variable storage
+					sessionStorage.setItem('imgData', dataurl);
+			 
+			 		// paramos camara
+			 		//app.stopCamera();
+			 		document.getElementById('stopCameraButton').click();
+			 
+					// cerramos emergente.
+					window.location.href="segunda.html";
+						
+
+				}, false);
+
+
+
+		 // Simulamos pulsar el boton de arranque. 
+		 //document.getElementById('startCameraAboveButton').click();
+		
+		 //alert ('listo');
+	CameraPreview.getSupportedPictureSizes(function(dimensions){
+  dimensions.sort(function(a, b){
+    return (b.width * b.height - a.width * a.height);
+  });
+  var dimension = dimensions[0];
+  CameraPreview.takePicture({width:dimension.width, height:dimension.height, quality: 85}, function(base64PictureData){
+    /*
+      base64PictureData is base64 encoded jpeg image. Use this data to store to a file or upload.
+      Its up to the you to figure out the best way to save it to disk or whatever for your application.
+    */
+
+    var image = 'data:image/jpeg;base64,' + imgData;
+    let holder = document.getElementById('originalPicture');
+    let width = holder.offsetWidth;
+    loadImage(
+      image,
+      function(canvas) {
+        holder.innerHTML = "";
+        if (app.camera === 'front') {
+          // front camera requires we flip horizontally
+          canvas.style.transform = 'scale(1, -1)';
+        }
+        holder.appendChild(canvas);
+      },
+      {
+        maxWidth: width,
+        orientation: true,
+        canvas: true
+      }
+    );
+  });
+});
+    </script>
+    
+
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="js/tether.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+		<script src="js/includehtml.js"></script>
+		<script src='js/jquery.validate.js'></script>
+		<script src="js/jquery.cookie-1.3.1.js"></script>
+
+		<script>
+includeHTML();
+</script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+        
+        /*
+    	Smooth scroll functionality for anchor links (animates the scroll
+    	rather than a sudden jump in the page)
+    */
+    $('.js-anchor-link').click(function(e){
+      e.preventDefault();
+      var target = $($(this).attr('href'));
+      if(target.length){
+        var scrollTo = target.offset().top;
+        $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+      }
+    });
+        
+//     const ptr = PullToRefresh.init({
+//     	  mainElement: 'body',
+//     	  onRefresh() {
+//     	    window.location.reload();
+//     	  },
+//     	  distThreshold : 50, // Minimum distance required to trigger the refresh.
+//           iconArrow: '<span class="fa fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
+//           instructionsPullToRefresh: "Pull down to DESTROY THE WORLD",
+//           instructionsReleaseToRefresh: "Release to ENABLE BOMB"
+//     	});
+        
+
+    </script>
+    
+   
+    <script src="js/pulltorefresh.js"></script>
+    <script>
+      /* global PullToRefresh */
+      PullToRefresh.init({
+        mainElement: 'body',
+        onRefresh: function() {window.location.reload();}
+      });
+    </script>
+    
+</body>
+</html>

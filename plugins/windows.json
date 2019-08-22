@@ -18,6 +18,9 @@
     },
     "cordova-plugin-progressdialog": {
       "PACKAGE_NAME": "GtareasCordova"
+    },
+    "cordova-plugin-camera-preview": {
+      "PACKAGE_NAME": "GtareasCordova"
     }
   },
   "dependent_plugins": {}
