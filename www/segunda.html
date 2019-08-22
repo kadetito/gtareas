@@ -7,95 +7,17 @@
 <script src="js/jquery-2.2.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="https://elmundo.webexpo.es/elmundo.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <script src="js/d1fa0d334c.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css" />
-
+<link rel="stylesheet" href="css/estilo.css" />
 </head>
 
-<body id="main"> 
+<body> 
 
-
-<div id="wrapper" class="toggled">
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-      <ul id="sidebar_menu" class="sidebar-nav">
-           <li class="sidebar-brand"></li>
-      </ul>
-        <ul class="sidebar-nav" id="sidebar">
-          <li id="div_Result"></li>
-
-          <li><a href="segunda.html">Inicio <img style="width:17px;float:right;margin-right:25px;margin-top:12px;" src="https://elmundo.webexpo.es/images/home-1.png" alt="HOME" title="HOME" /></a></li>
-          <li><a href="perfil.html">Mi perfil <img style="width:17px;float:right;margin-right:25px;margin-top:12px;" src="https://elmundo.webexpo.es/images/user-6.png" alt="PERFIL" title="PERFIL" /></a></li>
-          <li><a href="mis_subastas.html">Mis ofertas<img style="width:17px;float:right;margin-right:25px;margin-top:12px;" src="https://elmundo.webexpo.es/images/calendar-5.png" alt="Mis Ofertas" title="Mis Ofertas" /></a></li>
-          <li id="subastaspublicadas" style="display:none"><a href="subastas_asociados.html">Ofertas publicadas<img style="width:17px;float:right;margin-right:25px;margin-top:12px;" src="https://elmundo.webexpo.es/images/calendar-5.png" alt="Ofertas publicadas" title="Ofertas publicadas" /></a></li>
-          <li><a href="#" data-role="button" id="closeapp_2">Desconectar<img style="width:17px;float:right;margin-right:25px;margin-top:12px;" src="https://elmundo.webexpo.es/images/error.png" alt="Desconectar" title="Desconectar" /></a></li>
-         </ul>
-      </div>
-<!-- Sidebar -->            
- <div class="row marginvbaix page-header">	
-  <div class="col-xs-8">
-  	<img src="https://elmundo.webexpo.es/images/logotipointerior.png" alt="" title="" class="logotiposuperior" />
-  </div>
-  <div class="col-xs-2 text-right">
-  <a href="professionals.html"><img  class="medidabar"  src="https://elmundo.webexpo.es/images/user-4.png" alt="Profesionales" title="Profesionales" /></a>
-  </div>
-
-  <div class="col-xs-2 text-right">
-  <a id="menu-toggle" href="#"><img  class="medidabar2"  src="https://elmundo.webexpo.es/images/settings-5.png" alt="MENU" title="MENU" /></a>
-  </div>
-  </div> 
-  
-  
-  
-  
-<div class="container-fluid mtop"> 
-	         
-
-
-
-
-
-<form id="paso4" action="paso4.html" method="POST">	
-<p><small>Env&iacute;anos una foto del artículo que estas buscando.</small></p>
-<!--//AFEGIR IMATGE//-->
 <div id="posicioBotoImatge"></div>
-
+<div id="verimagen"></div>
  
-<p>&nbsp;</p>
-<p>Expl&iacute;canos que es lo que estas buscando</p>
-<input type="text" class="form-control" name="servicioSugerencia" value="" id="servicioSugerencia" />
-<div id="Sugerencia"></div>
 
-<p>Elige de qu&eacute; se trata lo que buscas </p>
-<select class="form-control" name="category" id="category"></select>
-
-<div id="subcategoria" style="display: none">  
-<p>Escoge una subcategor&iacute;a</p>
-<select class="form-control" name="subcategory" id="subcategory"></select>	
-</div>	
-	
-<div id="TipoProducto" style="display: none">
-<p>En qu&eacute; estado lo estas buscando</p>
-<select class="form-control" name="tipoArticulo" id="tipoArticulo"></select>	
-
-</div>
-	
-<div id="botonsiguiente" style="margin-top:15px; display: none"><center><input type="submit" class="btn btn-default massfh groddo biff" value="Siguiente" /></center>
-
-	</div>
-	
-<!--<div class="row" id="botonesCategorias"></div>-->
-
-
-
-
-</form>	
-
-
-</div>					
-</div>
-<div style="height:350px;"></div>
-<div id="bannerinferior" style="position: fixed; z-index:999;bottom: 0px"></div>
 
 
 <script type="text/javascript">
@@ -107,24 +29,27 @@ $(document).ready(function() {
 			
 		var imagen = sessionStorage.getItem('imgData');	
 		if (!imagen || imagen === null || imagen === 'null') { 
-			document.getElementById("posicioBotoImatge").innerHTML ='<center><div class="imgtpunt"><a href="camarafr.html"  class="btn btn-default massfh groddo  biff"><i class="fa fa-camera fa-2x" aria-hidden="true"></i><br />Subir imagen</a></div></center>';	
+			document.getElementById("posicioBotoImatge").innerHTML ='<center><div class="imgtpunt"><a href="tomarfoto.html"  class="btn btn-default massfh groddo  biff"><i class="fa fa-camera" aria-hidden="true"></i><br />Subir imagen</a></div></center>';	
 		} else {
-			$("#tableBanner").attr('src', imagen);
-			document.getElementById("posicioBotoImatge").innerHTML = '<center><div class="imgtpunt"><a href="#" class="pop"><img src="'+imagen+'" id="tableBanner" style="width:100%"/></a></div></center><center><a href="camarafr.html"  class="btn btn-default massfh groddo  biff"><i class="fa fa-camera fa-2x" aria-hidden="true"></i><br />Cambiar</a><div class="btn btn-default massfh groddo  biff" id="elimag" onclick="esborrarFoto()"><i class="fa fa-trash fa-2x" aria-hidden="true" style="margin-top:34px"></i><br />Borrar</div></center>';	
-		}	
 			
-		//borrar imatge
-		function esborrarFoto() {
-			if (!imagen || imagen === null || imagen === 'null') {} else {
-				sessionStorage.removeItem("imgData");
-				location.reload();
-			}
+			document.getElementById("posicioBotoImatge").innerHTML = '<div class="row"><div class="col-12 text-center"><div class="imgtpunt"><a href="#" class="pop"><img src="'+imagen+'" id="tableBanner" style="width:100%"/></a></div></div></div><div class="row"><div class="col-4 text-center"><a href="tomarfoto.html"  class="btn btn-default"><i class="fas fa-undo"></i></a></div><div class="col-4 text-center"><form action="" method="POST"><input type="hidden" name="imagen_guardar" value="'+imagen+'" /><button class="btn btn-default" id="elimag"><i class="fas fa-save"></i></button></form></div><div class="col-4 text-center"><button class="btn btn-default" id="elimag"><i class="fa fa-trash" aria-hidden="true"></i></button></div></div>';	
+		}	
+});			
+	
+$(document).ready(function(){
+	  $("#elimag").click(function(){
+	    alert("The paragraph was clicked.");
+	    if (!imagen || imagen === null || imagen === 'null') {} else {
+			sessionStorage.removeItem("imgData");
+			location.reload();
 		}
-
-
-});
+	  });
+});	
 	
 
+
+var imagenrescatada = sessionStorage.getItem("imgData");
+document.getElementById("verimagen").innerHTML = '<p>'+imagenrescatada+'</p>';
 
 </script>
 
