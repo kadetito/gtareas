@@ -17,8 +17,8 @@
   </config-file>
      <!-- Android only -->
   <preference name="android-minSdkVersion" value="14" />
-  <preference name="android-maxSdkVersion" value="1" />
-  <preference name="android-targetSdkVersion" value="1" />
+  <preference name="android-maxSdkVersion" value="24" />
+  <preference name="android-targetSdkVersion" value="24" />
   
   
     <access origin="*" />
