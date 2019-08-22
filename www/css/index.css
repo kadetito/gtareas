@@ -1,0 +1,43 @@
+body, html{
+  height:100%;
+}
+
+.block{
+  padding:. 0;
+  margin:. 0;text-align:center;
+  background: transparent;
+  border:0px solid #111;
+  border-radius: 3px;
+}
+button{
+  background: gray:
+  color:#333;
+  border-radius: 3px;
+  border:1px solid #ccc;
+  margin:.25rem;
+}
+.traspictures{
+
+width:97%;
+height:280px;
+position:absolute;
+z-index:-1;
+top:5px;
+left:5px;
+
+}
+
+.pictures{
+
+
+width:97%;
+height:280px;background-repeat:no-repeat;
+position:absolute;
+z-index:-1;
+top:5px;
+left:5px;
+}
+.controls{
+position:absolute;bottom:15px;
+width:100%;padding:0px;margin:0px;
+}
