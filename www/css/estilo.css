@@ -220,6 +220,36 @@ a.article:hover {
 	.alzador2{height:85px;}
 }
 
+/* .btn-default{ */
+/*   padding: 10px ; */
+/*   font-size: 0.65rem; */
+/*   line-height: 1; */
+/*   color:#333333 !important; */
+/*   background-color: #cccccc; */
+/*   border: 1px solid #666666; */
+/*   border-radius: 5%; */
+/*   outline:0px; */
+
+/* } */
+
+.silencetext{font-size:13px;}
+.btn-default{
+  padding: 10px ;
+  padding-top:13px;
+  font-size: 1.45rem;
+  line-height: 1;
+  height:50px;width:50px;
+  color:#666666 !important;
+  background-color: #cccccc;
+  border: 1px solid #666666;
+  border-radius: 50%;
+  outline:0px;
+/*   margin-left:10px; */
+/*   margin-right:10px; */
+
+}
+
+
 .btn-primary  {
   padding: 10px ;
   padding-top:13px;

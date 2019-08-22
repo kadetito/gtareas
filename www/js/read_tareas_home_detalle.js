@@ -32,7 +32,7 @@ var app = {
 		var items = [];
 		$.each(data, function(key, val){
 					
-			items.push('<div class="card"><div class="card-body"><h4>' + val.fecha + ' - ' +val.title + '</h4><ul><li>Cliente: ' + val.cliente + '</li><li>Direcci&oacute;n: ' + val.direccion + '</li><li>Poblaci&oacute;n: ' + val.poblacion + '</li><li>Tel.: <a href="tel:' + val.telefono + '">' + val.telefono + '</a></li></ul><p>' + val.body + '</p></div></div>');
+			items.push('<h4>' + val.fecha + ' - ' +val.title + '</h4><ul><li>Cliente: ' + val.cliente + '</li><li>Direcci&oacute;n: ' + val.direccion + '</li><li>Poblaci&oacute;n: ' + val.poblacion + '</li><li>Tel.: <a href="tel:' + val.telefono + '">' + val.telefono + '</a></li></ul><p>' + val.body + '</p>');
 			
 		});
 		$('#posts').html(items.join('<br/>'));

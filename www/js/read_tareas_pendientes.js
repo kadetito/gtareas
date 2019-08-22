@@ -31,7 +31,7 @@ var app = {
 		var items = [];
 		$.each(data, function(key, val){
 					
-			items.push('<div class="card"><div class="card-body"><a href="' + app.get_url +'?param='+ val.id + '">' + val.fecha + ' - ' +val.title + '</a></div></div>');
+			items.push('<a href="' + app.get_url +'?param='+ val.id + '">' + val.fecha + ' - ' +val.title + '</a>');
 			
 		});
 		$('#posts').html(items.join('<br/>'));
