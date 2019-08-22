@@ -2,9 +2,9 @@
     DEMO STYLE
 */
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 body {
-    font-family: 'Poppins', sans-serif;
+     font-family: 'Roboto', sans-serif;
     background: #4A9595;
     
 }
@@ -12,12 +12,15 @@ html,body{height:100%;}
 
 h1,h2,h3{color:#ffffff;}
 p {
-    font-family: 'Poppins', sans-serif;
+   font-family: 'Roboto', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
     color: #999;
 }
+
+.section h4 a{color:#ffffff;text-decoration: none;
+    transition: all 0.3s;}
 
 a,
 a:hover,
@@ -253,7 +256,7 @@ a.article:hover {
 
 
 
-.card-body p{font-weight:normal;font-family:Arial;}
+.card-body p{font-weight:normal;font-family: 'Roboto', sans-serif;}
 
 
 

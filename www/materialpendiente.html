@@ -18,6 +18,14 @@
 		    $('.sk-fading-circle-back').fadeOut(100);
 		});
 	</script>
+		    <script type="text/javascript">
+    //recojo los parametros por URL 
+	var url_string = window.location.href;
+	var url = new URL(url_string);
+	var cparam = url.searchParams.get("param");
+	console.log(cparam);
+    </script>	
+		<script src='js/read_tareas_material_pendiente.js'></script>  	
 </head>
 
 <body class="pt-5"><div class="sk-fading-circle-back">
@@ -78,7 +86,7 @@
                     <a href="#homeSubmenuTar" data-toggle="collapse" aria-expanded="false">Tareas</a>
                     <ul class="collapse list-unstyled" id="homeSubmenuTar">
                         <li>
-                            <a href="tareaspendientes.tml" >Tareas pendientes</a>
+                            <a href="tareaspendientes.html" >Tareas pendientes</a>
                         </li>
                         <li>
                             <a href="tareasrealizadas.html" >Tareas realizadas</a>
@@ -110,9 +118,9 @@
 	
 <div  class="section"><div class="alzador2" id="section-1"></div>
 	  <h3>Material pendiente</h3>
-<div class="card">
-  <div class="card-body">Basic card</div>
-</div>
+	<div data-role="page" id="main">
+		<div data-role="content" id="posts">Posts to be shown here</div>
+	</div>
 </div>
 <!-- //
 <!--// fin SECCION 1 
