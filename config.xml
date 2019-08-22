@@ -16,9 +16,9 @@
   <string>Allow the app to use your camera</string>
   </config-file>
      <!-- Android only -->
-  <preference name="android-minSdkVersion" value="16" />
-  <preference name="android-maxSdkVersion" value="28" />
-  <preference name="android-targetSdkVersion" value="26" />
+  <preference name="android-minSdkVersion" value="1" />
+  <preference name="android-maxSdkVersion" value="1" />
+  <preference name="android-targetSdkVersion" value="1" />
   
   
     <access origin="*" />
