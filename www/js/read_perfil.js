@@ -32,8 +32,8 @@ var app = {
 		var items = [];
 		$.each(data, function(key, val){
 
-			items.push('<div class="card"><div class="card-body"><div class="text-center"><img src="http://www.webentorn.com/gtareas/frontend/backoffice/img/' + val.imagen + '" alt="' + val.numero + '" /></div><ul><li>N&uacute;mero: ' + val.numero + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel.: <a href="tel:' + val.telefono + '">' + val.telefono + '</a></li></ul></div></div>');
-			
+			items.push('<div class="card"><div class="card-body"><div class="text-center"><img src="' + val.foto + '" alt="' + val.codigo_empleado + '" /></div><ul><li>N&uacute;mero: ' + val.codigo_empleado + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel.: <a href="tel:' + val.telefono + '">' + val.telefono + '</a></li><li>Usuario: ' + val.usuario_empleado + '</li><li>Password: ' + val.password_empleado + '</li></ul></div></div>');
+
 		});
 		$('#posts').html(items.join('<br/>'));
 		console.log('Exiting onSuccess');
