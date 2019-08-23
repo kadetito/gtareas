@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 var app = {
 //	posts_url: "http://jsonplaceholder.typicode.com/posts",
-	posts_url: "http://www.webentorn.com/gtareas/frontend/backoffice/tareas_mensajes.json",
+	posts_url: "http://www.webentorn.com/gtareas/backoffice/tareas_mensajes.json",
 	get_url : "detallemensajes.html",
 	onDeviceReady: function() {
 		console.log('Device is ready');

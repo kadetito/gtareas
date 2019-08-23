@@ -8,7 +8,7 @@ $(document).ready(function() {
 var app = {
 //TODO recibo el aparametro cparam con la id del registro y se la paso a la url para que me cree el archivo JSOn desde la BBDD
 //eventualmente muestro un JSOn de prueba con el mismo registro siempre
-	posts_url: "http://www.webentorn.com/gtareas/frontend/backoffice/tareas_configuracion_detalle.json",
+	posts_url: "http://www.webentorn.com/gtareas/backoffice/tareas_configuracion_detalle.json",
 	get_url : "detallefactura.html",
 	onDeviceReady: function() {
 		console.log('Device is ready');
