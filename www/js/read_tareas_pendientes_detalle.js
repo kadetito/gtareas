@@ -30,13 +30,18 @@ var app = {
 
 	onSuccess: function(data) {
 		var items = [];
+		var abier = [];
 		$.each(data, function(key, val){
 					
 			
 			items.push('<h4>' + val.fecha + ' - ' +val.codigo_tarea + ' - ' +val.titulo + '</h4><ul><li>Cliente: <a href="detallecliente.html?param=' +val.id_cliente + '">' +val.nombrecliente + '</a></li><li>Fecha inicio: ' +val.fecha_inicio + '</li><li>Direcci&oacute;n: ' +val.direccion + ' ' +val.codigopostal + '</li><li>Poblaci&oacute;n: ' +val.poblacion + '</li><li>Abierta: ' +val.abierta + '</li><li>Tel.: <a href="tel:' +val.telefono + '">' +val.telefono + '</a></li></ul><p>' +val.descripcion + '</p>');
+			abier.push(val.abierta);
+			
+			
 			
 		});
 		$('#posts').html(items.join('<br/>'));
+		$('#abierta').html($('#abierta').val(abier.join()));
 		console.log('Exiting onSuccess');
 	},
 
@@ -44,7 +49,10 @@ var app = {
 		console.log('Data: ' + data);
 		console.log('Status: ' + textStatus);
 		console.log('Error: ' + errorThrown);
-		$("#posts").html('Error while loading posts');
-		console.log('Exiting onError');
+		window.location.replace("tareaspendientes.html");
+//		$("#posts").html('Error while loading posts');
+//		console.log('Exiting onError');
 	}
+	
+	
 };

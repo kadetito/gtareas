@@ -17,7 +17,8 @@
     </script>	
 		<script src='js/read_tareas_realizadas_detalle.js'></script>  	
 	
-
+	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css" />
+<script src="js/jquery.datetimepicker.full.min.js"></script>
 	
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
@@ -31,7 +32,7 @@
 	</script>
 </head>
 
-<body class="pt-5"><div class="sk-fading-circle-back">
+<body class="pt-5"  onload="validaciones()"><div class="sk-fading-circle-back">
 	  <div class="sk-fading-circle">
 		  <div class="sk-circle1 sk-circle"></div>
 		  <div class="sk-circle2 sk-circle"></div>
@@ -131,10 +132,11 @@
 <hr />
 <div class="row">
 <div class="col-6 text-center">
-	<a id="modal-878691" href="#modal-container-878691" role="button" class="btn btn-default" data-toggle="modal"><i class="fas fa-folder-open"></i></a><p class="silencetext">Iniciar tarea</p> <!-- (si tarea en curso, detener tarea) pulsar aqui guarda la hora de inicio, detenerla cierra la tarea -->
-	</div>
+<input type="hidden" id="abierta" value="" />
+	<div id="out"></div>
+</div>
 	<div class="col-6 text-center">
-	<a id="modal-878692" href="#modal-container-878692" role="button" class="btn btn-default" data-toggle="modal"><i class="fas fa-stopwatch"></i></a><p class="silencetext">imputar horas</p> <!-- manualmente -->
+	<div id="imputacion"></div> 
 	</div>
 </div>
 
@@ -144,7 +146,7 @@
 	<a id="modal-878693" href="#modal-container-878693" role="button" class="btn btn-default" data-toggle="modal"><i class="fas fa-file-invoice"></i></a><p class="silencetext">Crear factura</p> <!-- con la tarea cerrada  -->
 	</div>
 	<div class="col-6  text-center">
-	<a id="modal-878694" href="#modal-container-878694" role="button" class="btn btn-default" data-toggle="modal"><i class="far fa-folder-open"></i></a><p class="silencetext">reabrir tarea</p>  <!--si esta cerrada crea una tarea nueva identica con diferente numero de referencia-->
+<div id="disableo"></div> 
 	</div>
 </div>
 
@@ -159,9 +161,10 @@
 
 	</div>	
 </div>
-
 	 <hr />
-	 
+<div class="card">
+  <div class="card-body"><h5>Horas imputadas</h5><p>wedwedwe</p></div>
+</div>	 
 <div class="card">
   <div class="card-body"><h5>Observaciones</h5><p>wedwedwe</p></div>
 </div>
@@ -204,7 +207,22 @@
 				</div>
 </div>
 <!-- ////FIN MODAL 1 -->
-
+<!-- ///MODAL 1 -->
+<div class="modal fade" id="modal-container-878691a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="myModalLabel">Cerrar Tarea</h5> 
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							Esta tarea se cerrar&aacute; a la hora actual: 19:00:40 h.de hoy, desea continuar?
+							<a href="" class="btn btn-default">Continuar</a>
+						</div>
+					</div>
+				</div>
+</div>
+<!-- ////FIN MODAL 1B -->
 <!-- ///MODAL 2 -->
 <div class="modal fade" id="modal-container-878692" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog" role="document">
@@ -357,7 +375,50 @@ includeHTML();
         onRefresh: function() {window.location.reload();}
       });
     </script>
-    
+      	<script>
+	//compruebo si la tarea esta iniciada o cerrada y muestro el boton o el disabled de reabrir tarea o imputar horas o crear factura
+	function validaciones() {
+		var opened = document.getElementById("abierta").value;
+
+		  if (opened =='S') {
+			  //boton
+			  				output = '<a id="modal-878691a" href="#modal-container-878691a" role="button" class="btn btn-default" data-toggle="modal"><i class="fas fa-folder"></i></a><p class="silencetext">Cerrar tarea</p>';
+
+			  //disabled
+			  			    disab ='<span role="button"  class="btn btn-default disb" data-toggle="modal"><i class="far fa-folder-open"></i></span><p class="silencetextdisbled">reabrir tarea</p>';
+
+			  //imputar
+			    impu = '<a id="modal-878692" href="#modal-container-878692" role="button" class="btn btn-default" data-toggle="modal"><i class="fas fa-stopwatch"></i></a><p class="silencetext">imputar horas</p>';
+			  //factura
+			    
+			    document.getElementById("out").innerHTML = output;
+				document.getElementById("disableo").innerHTML = disab;
+				document.getElementById("imputacion").innerHTML = impu;
+		  } else {
+			  //boton
+			  				output = '<span role="button" class="btn btn-default disb" data-toggle="modal"><i class="fas fa-folder-open"></i></span><p class="silencetextdisbled">Iniciar tarea</p>';
+
+			  //disabled
+			  			    disab ='<a id="modal-878694" href="#modal-container-878694" role="button" class="btn btn-default" data-toggle="modal"><i class="far fa-folder-open"></i></a><p class="silencetext">reabrir tarea</p>';
+
+			  //imputar
+			    impu = '<span role="button" class="btn btn-default disb" data-toggle="modal"><i class="fas fa-stopwatch"></i></span><p class="silencetextdisbled">imputar horas</p>';
+			  //factura
+			    
+			    document.getElementById("out").innerHTML = output;
+				document.getElementById("disableo").innerHTML = disab;
+				document.getElementById("imputacion").innerHTML = impu;
+		  }
+	
+	}
+	</script>
+	  <script>
+  $( function() {
+    $( "#fecha" ).datetimepicker();
+    $( "#fecha_inicio" ).datetimepicker();
+    $( "#fecha_finalizacion" ).datetimepicker();
+  } );
+  </script>
 </body>
 
 </html>

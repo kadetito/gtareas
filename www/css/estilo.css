@@ -233,6 +233,8 @@ a.article:hover {
 /* } */
 
 .silencetext{font-size:13px;}
+.silencetextdisbled{font-size:13px;color:#ededed;}
+
 .btn-default{
   padding: 10px ;
   padding-top:13px;
@@ -274,9 +276,7 @@ a.article:hover {
 }
 
 
-
-
-
+.disb{color:#ffffff !important;}
 
 
 
