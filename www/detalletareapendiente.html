@@ -16,6 +16,11 @@
 	console.log(cparam);
 	
 	$(window).load(function(){
+		
+		var abiert = sessionStorage.getItem("abierta");
+		
+		$('#abierta').html($('#abierta').val(abiert));
+		
 	$('#id_tarea').html($('#id_tarea').val(cparam));
 	});
     </script>	

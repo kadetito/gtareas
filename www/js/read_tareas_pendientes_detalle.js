@@ -41,7 +41,8 @@ var app = {
 			
 		});
 		$('#posts').html(items.join('<br/>'));
-		$('#abierta').html($('#abierta').val(abier.join()));
+		sessionStorage.setItem("abierta", abier.join());
+//		$('#abierta').html($('#abierta').val(abier.join()));
 		console.log('Exiting onSuccess');
 	},
 
