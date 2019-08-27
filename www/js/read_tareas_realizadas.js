@@ -7,8 +7,8 @@ $(document).ready(function() {
 
 var app = {
 //	posts_url: "http://jsonplaceholder.typicode.com/posts",
-	posts_url: "http://www.webentorn.com/gtareas/backoffice/tareas_realizadas.json",
-	get_url : "detalletarea.html",
+		posts_url: "http://www.webentorn.com/gtareas/backoffice/json/listatareasrealizadas.json.php",
+	get_url : "detalletarearealizada.html",
 	onDeviceReady: function() {
 		console.log('Device is ready');
 		app.readPosts();
@@ -31,7 +31,7 @@ var app = {
 		var items = [];
 		$.each(data, function(key, val){
 					
-			items.push('<div class="card"><div class="card-body"><a href="' + app.get_url +'?param='+ val.id + '">' + val.fecha + ' - ' +val.title + '</a></div></div>');
+			items.push('<div class="card"><div class="card-body"><a href="' + app.get_url +'?param='+ val.id_tarea + '">' + val.fecha + ' - ' +val.codigo_tarea + ' - ' +val.titulo + '</a></div></div>');
 			
 		});
 		$('#posts').html(items.join('<br/>'));
@@ -42,7 +42,7 @@ var app = {
 		console.log('Data: ' + data);
 		console.log('Status: ' + textStatus);
 		console.log('Error: ' + errorThrown);
-		$("#posts").html('Error while loading posts');
+		$("#posts").html('No hay tareas realizadas');
 		console.log('Exiting onError');
 	}
 };

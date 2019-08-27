@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 var app = {
 //	posts_url: "http://jsonplaceholder.typicode.com/posts",
-	posts_url: "http://www.webentorn.com/gtareas/backoffice/tareas_home.json",
+		posts_url: "http://www.webentorn.com/gtareas/backoffice/json/listatareas.json.php",
 	get_url : "detalletarea.html",
 	onDeviceReady: function() {
 		console.log('Device is ready');
@@ -30,8 +30,7 @@ var app = {
 	onSuccess: function(data) {
 		var items = [];
 		$.each(data, function(key, val){
-					
-			items.push('<div class="card"><div class="card-body"><a href="' + app.get_url +'?param='+ val.id + '">' + val.fecha + ' - ' +val.title + '</a></div></div>');
+			items.push('<div class="card"><div class="card-body"><a href="' + app.get_url +'?param='+ val.id_tarea + '">' + val.fecha + ' - ' +val.codigo_tarea + ' - ' +val.titulo + '</a></div></div>');
 			
 		});
 		$('#posts').html(items.join('<br/>'));

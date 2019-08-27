@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+	<meta http-equiv="Content-Security-Policy" content=" media-src *; img-src 'self' data: content:;">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+    <title>gTareas</title>
+	<script src='js/jquery-2.2.4.min.js'></script>  
+	    <script type="text/javascript">
+    //recojo los parametros por URL 
+	var url_string = window.location.href;
+	var url = new URL(url_string);
+	var cparam = url.searchParams.get("param");
+	console.log(cparam);
+    </script>	
+		<script src='js/read_tareas_realizadas_detalle.js'></script>  	
+	
+
+	
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/loader.css">
+	<link rel="stylesheet" href="css/estilo.css">
+	<script>
+		$(window).load(function(){
+		    $('.sk-fading-circle-back').fadeOut(100);
+		});
+	</script>
+</head>
+
+<body class="pt-5"><div class="sk-fading-circle-back">
+	  <div class="sk-fading-circle">
+		  <div class="sk-circle1 sk-circle"></div>
+		  <div class="sk-circle2 sk-circle"></div>
+		  <div class="sk-circle3 sk-circle"></div>
+		  <div class="sk-circle4 sk-circle"></div>
+		  <div class="sk-circle5 sk-circle"></div>
+		  <div class="sk-circle6 sk-circle"></div>
+		  <div class="sk-circle7 sk-circle"></div>
+		  <div class="sk-circle8 sk-circle"></div>
+		  <div class="sk-circle9 sk-circle"></div>
+		  <div class="sk-circle10 sk-circle"></div>
+		  <div class="sk-circle11 sk-circle"></div>
+		  <div class="sk-circle12 sk-circle"></div>
+	  </div>
+	</div>   
+	
+	<!-- /////TOP y FOOTER /////-->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#"><img src="img/logogtareas.png" alt="" /></a>
+      <button class="navbar-toggler"  id="sidebarCollapse" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <nav class="navbar_foot fixed-bottom navbar-expand-sm navbar-dark bg-dark text-center">
+      <a href="index.html#section-1" class=" btn btn-primary" role="button">
+        <i class="fas fa-tasks"></i>
+      </a>
+      <a href="index.html#section-2" class=" btn btn-primary" role="button">
+        <i class="fas fa-box-open"></i>
+      </a>
+     <a href="index.html#section-3" class=" btn btn-primary" role="button">
+        <i class="fas fa-clock"></i>
+      </a>
+      <a href="index.html#section-4" class=" btn btn-primary" role="button">
+        <i class="fas fa-envelope-open-text"></i>
+      </a>
+    </nav>
+	<!-- /////TOP y FOOTER /////-->
+    	
+<!-- Page Content  -->
+<div id="content">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="sidebar-header">
+                <p>Nombre empleado</p>
+                <p>Núm: 883675639</p>
+            </div>
+            <ul class="list-unstyled components">
+				<li><a href="perfil.html">Empleado</a></li>
+							<li>
+                    <a href="#homeSubmenuTar" data-toggle="collapse" aria-expanded="false">Tareas</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuTar">
+                        <li>
+                            <a href="tareaspendientes.html" >Tareas pendientes</a>
+                        </li>
+                        <li>
+                            <a href="tareasrealizadas.html" >Tareas realizadas</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Material adquirido</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="materialpendiente.html" >Material pendiente</a>
+                        </li>
+                        <li>
+                            <a href="materialdevuelto.html" >Material devuelto</a>
+                        </li>
+                    </ul>
+                </li>
+				<li><a href="partes.html">Partes</a></li>
+				<li><a href="controlhorarios.html">Control de Horarios</a></li>
+				<li><a href="mensajes.html">Mensajes</a></li>
+				<li><a href="facturas.html">Facturas</a></li>
+				<li><a href="configuracion.html">Configuraci&oacute;n</a></li>
+            </ul>
+        </nav>
+
+<!-- //
+<!--// SECCION 1 
+<!--// -->
+	
+	<div  class="section"><div class="alzador" id="section-1"></div>
+	  <h4><a href="javascript:history.go(-1)"><i class="fas fa-arrow-circle-left"></i></a> Tareas pendientes</h4>
+
+
+<div class="card">
+	<div class="card-body">
+ 
+	<div data-role="page" id="main">
+		<div data-role="content" id="posts">Posts to be shown here</div>
+	</div>
+<hr />
+<div class="row">
+<div class="col-6 text-center">
+	<a id="modal-878691" href="#modal-container-878691" role="button" class="btn btn-default" data-toggle="modal"><i class="fas fa-folder-open"></i></a><p class="silencetext">Iniciar tarea</p> <!-- (si tarea en curso, detener tarea) pulsar aqui guarda la hora de inicio, detenerla cierra la tarea -->
+	</div>
+	<div class="col-6 text-center">
+	<a id="modal-878692" href="#modal-container-878692" role="button" class="btn btn-default" data-toggle="modal"><i class="fas fa-stopwatch"></i></a><p class="silencetext">imputar horas</p> <!-- manualmente -->
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-6  text-center">
+	<a id="modal-878693" href="#modal-container-878693" role="button" class="btn btn-default" data-toggle="modal"><i class="fas fa-file-invoice"></i></a><p class="silencetext">Crear factura</p> <!-- con la tarea cerrada  -->
+	</div>
+	<div class="col-6  text-center">
+	<a id="modal-878694" href="#modal-container-878694" role="button" class="btn btn-default" data-toggle="modal"><i class="far fa-folder-open"></i></a><p class="silencetext">reabrir tarea</p>  <!--si esta cerrada crea una tarea nueva identica con diferente numero de referencia-->
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-6  text-center">
+	<a id="modal-878695" href="#modal-container-878695" role="button" class="btn btn-default" data-toggle="modal"><i class="fas fa-clipboard"></i></a><p class="silencetext">observaciones</p>
+	</div>
+	<div class="col-6  text-center">
+	<a href="tomarfoto.html" role="button" class="btn btn-default" ><i class="fas fa-camera"></i></a><p class="silencetext">Tomar foto</p>	
+	</div>
+</div>
+
+	</div>	
+</div>
+
+	 <hr />
+	 
+<div class="card">
+  <div class="card-body"><h5>Observaciones</h5><p>wedwedwe</p></div>
+</div>
+<div class="card">
+  <div class="card-body"><h5>Fotografias</h5><p>wedwedwe</p></div>
+</div>
+<div class="card">
+  <div class="card-body"><h5>Archivos adjuntos</h5><p>wedwedwe</p></div>
+</div>
+<div class="card">
+  <div class="card-body"><h5>Teléfonos rápidos</h5><p>Secretaría: 973 764 874</p></div>
+</div>
+<div class="alzador"></div>
+	</div>
+<!-- //
+<!--// fin SECCION 1 
+<!--// -->
+</div>
+
+
+
+
+
+
+
+
+<!-- ///MODAL 1 -->
+<div class="modal fade" id="modal-container-878691" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="myModalLabel">Iniciar Tarea</h5> 
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							Esta tarea se iniciar&aacute; a la hora actual: 19:00:40 h.de hoy, desea continuar?
+							<a href="" class="btn btn-default">Continuar</a>
+						</div>
+					</div>
+				</div>
+</div>
+<!-- ////FIN MODAL 1 -->
+
+<!-- ///MODAL 2 -->
+<div class="modal fade" id="modal-container-878692" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="myModalLabel">Imputar horas</h5> 
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							Se dispone a imputar un n&uacute;mero de horas aplicadas a esta tarea. Dichas horas ser&aacute;n a&ntilde;adidas a la factura.
+							<input type="text" class="form-control" value="" placeholder="para las medias horas escriba 0,5" name="horas_imputadas" />
+							<a href="" class="btn btn-default">Imputar</a>
+						</div>
+					</div>
+				</div>
+</div>
+<!-- ////FIN MODAL 2 -->
+
+<!-- ///MODAL 3 -->
+<div class="modal fade" id="modal-container-878693" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="myModalLabel">Crear factura</h5> 
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							La factura se creará con los siguientes datos. Por favor, a&ntilde;ada la firma del cliente.
+							<ul>
+							<li>Cliente:</li>
+							<li>NIF/CIF:</li>
+							<li>Núm Factura:</li>
+							<li>Fecha:</li>
+							<li>Concepto:</li>
+							<li>Firma:</li>
+							</ul>
+							<input type="text" class="form-control" value="" placeholder="Para enviar la factura por e-mail, escriba aqu&iacute; la direcci&oacute;n" name="email_factura" />
+							<a href="" class="btn btn-default">Crear Factura</a>
+						</div>
+					</div>
+				</div>
+</div>
+<!-- ////FIN MODAL 3 -->
+
+<!-- ///MODAL 4 -->
+<div class="modal fade" id="modal-container-878694" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="myModalLabel">Reabrir Tarea</h5> 
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							Atenci&oacute;n, se crear&aacute; una nueva tarea id&eacute;ntica con diferente n&uacute;mero de referencia. Desea continuar?
+							<a href="" class="btn btn-default">Continuar</a>
+						</div>
+					</div>
+				</div>
+</div>
+<!-- ////FIN MODAL 4 -->
+
+<!-- ///MODAL 5 -->
+<div class="modal fade" id="modal-container-878695" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="myModalLabel">A&ntilde;adir Observaciones</h5> 
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							<textarea class="form-control" name="observaciones_tarea" rows="10"></textarea>
+
+							<a href="" class="btn btn-default">Continuar</a>
+						</div>
+					</div>
+				</div>
+</div>
+<!-- ////FIN MODAL 5 -->
+
+
+
+
+<div class="overlay"></div>
+
+  <script src="js/d1fa0d334c.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="js/tether.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+		<script src="js/includehtml.js"></script>
+		<script src='js/jquery.validate.js'></script>
+		<script src="js/jquery.cookie-1.3.1.js"></script>
+
+		<script>
+includeHTML();
+</script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+        
+        /*
+    	Smooth scroll functionality for anchor links (animates the scroll
+    	rather than a sudden jump in the page)
+    */
+    $('.js-anchor-link').click(function(e){
+      e.preventDefault();
+      var target = $($(this).attr('href'));
+      if(target.length){
+        var scrollTo = target.offset().top;
+        $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+      }
+    });
+        
+//     const ptr = PullToRefresh.init({
+//     	  mainElement: 'body',
+//     	  onRefresh() {
+//     	    window.location.reload();
+//     	  },
+//     	  distThreshold : 50, // Minimum distance required to trigger the refresh.
+//           iconArrow: '<span class="fa fa-arrow-down"></span>', // The icon for both instructionsPullToRefresh and instructionsReleaseToRefresh
+//           instructionsPullToRefresh: "Pull down to DESTROY THE WORLD",
+//           instructionsReleaseToRefresh: "Release to ENABLE BOMB"
+//     	});
+        
+
+    </script>
+    
+   
+    <script src="js/pulltorefresh.js"></script>
+    <script>
+      /* global PullToRefresh */
+      PullToRefresh.init({
+        mainElement: 'body',
+        onRefresh: function() {window.location.reload();}
+      });
+    </script>
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
