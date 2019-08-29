@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-    <Identity Name="io.cordova.gtareascordova" Publisher="CN=$username$" Version="1.0.0.0" />
+    <Identity Name="io.cordova.gtareascordova" Publisher="CN=$username$" Version="1.6.1.0" />
     <mp:PhoneIdentity PhoneProductId="83192030-bdab-11e9-8b5a-8d7edc0c7eb0" PhonePublisherId="db093ed5-53b1-45f7-af72-751e8f36ab80" />
     <Properties>
-        <DisplayName>GtareasCordova</DisplayName>
-        <PublisherDisplayName>Apache Cordova Team</PublisherDisplayName>
+        <DisplayName>gTareas</DisplayName>
+        <PublisherDisplayName>Rafa P</PublisherDisplayName>
         <Logo>images\StoreLogo.png</Logo>
         <Description>A sample Apache Cordova application that responds to the deviceready event.</Description>
     </Properties>
@@ -17,7 +17,7 @@
     </Resources>
     <Applications>
         <Application Id="io.cordova.gtareascordova" StartPage="www/index.html">
-            <m3:VisualElements BackgroundColor="transparent" Description="A sample Apache Cordova application that responds to the deviceready event." DisplayName="GtareasCordova" ForegroundText="light" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
+            <m3:VisualElements BackgroundColor="transparent" Description="A sample Apache Cordova application that responds to the deviceready event." DisplayName="gTareas" ForegroundText="light" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png">
                 <m3:DefaultTile Square71x71Logo="images\Square71x71Logo.png" Wide310x150Logo="images\Wide310x150Logo.png">
                     <m3:ShowNameOnTiles>
                         <m3:ShowOn Tile="square150x150Logo" />

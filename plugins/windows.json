@@ -21,6 +21,9 @@
     },
     "cordova-plugin-camera-preview": {
       "PACKAGE_NAME": "GtareasCordova"
+    },
+    "cordova-plugin-simplelogin": {
+      "PACKAGE_NAME": "GtareasCordova"
     }
   },
   "dependent_plugins": {}

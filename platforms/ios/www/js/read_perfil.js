@@ -8,7 +8,7 @@ $(document).ready(function() {
 var app = {
 //TODO recibo el aparametro cparam con la id del registro y se la paso a la url para que me cree el archivo JSOn desde la BBDD
 //eventualmente muestro un JSOn de prueba con el mismo registro siempre
-	posts_url: "http://www.webentorn.com/gtareas/frontend/backoffice/tareas_perfil.json",
+	posts_url: "http://www.webentorn.com/gtareas/backoffice/json/detalleempleados.json.php?id_empleado="+cparam,
 	get_url : "detalletarea.html",
 	onDeviceReady: function() {
 		console.log('Device is ready');
@@ -32,8 +32,8 @@ var app = {
 		var items = [];
 		$.each(data, function(key, val){
 
-			items.push('<div class="card"><div class="card-body"><div class="text-center"><img src="http://www.webentorn.com/gtareas/frontend/backoffice/img/' + val.imagen + '" alt="' + val.numero + '" /></div><ul><li>N&uacute;mero: ' + val.numero + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel.: <a href="tel:' + val.telefono + '">' + val.telefono + '</a></li></ul></div></div>');
-			
+			items.push('<div class="card"><div class="card-body"><div class="text-center"><img src="' + val.foto + '" alt="' + val.codigo_empleado + '" /></div><ul><li>N&uacute;mero: ' + val.codigo_empleado + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel.: <a href="tel:' + val.telefono + '">' + val.telefono + '</a></li><li>Usuario: ' + val.usuario_empleado + '</li><li>Password: ' + val.password_empleado + '</li></ul></div></div>');
+
 		});
 		$('#posts').html(items.join('<br/>'));
 		console.log('Exiting onSuccess');

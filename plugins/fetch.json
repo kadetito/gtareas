@@ -46,5 +46,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-simplelogin": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/shuhailshuvo/cordova-plugin-SimpleLogin.git"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

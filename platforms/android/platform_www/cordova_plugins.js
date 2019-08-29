@@ -63,6 +63,15 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "CameraPreview"
       ]
+    },
+    {
+      "id": "cordova-plugin-simplelogin.SimpleLogin",
+      "file": "plugins/cordova-plugin-simplelogin/www/simplelogin.js",
+      "pluginId": "cordova-plugin-simplelogin",
+      "clobbers": [
+        "SimpleLogin"
+      ],
+      "runs": true
     }
   ];
   module.exports.metadata = {
@@ -71,6 +80,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-statusbar": "2.4.3",
     "cordova-plugin-progressdialog": "2.0.1",
     "cordova-plugin-restful": "0.0.3",
-    "cordova-plugin-camera-preview": "0.11.0"
+    "cordova-plugin-camera-preview": "0.11.0",
+    "cordova-plugin-simplelogin": "1.0.0"
   };
 });

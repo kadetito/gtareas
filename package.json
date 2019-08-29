@@ -20,6 +20,7 @@
     "cordova-plugin-camera-preview": "git+https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git",
     "cordova-plugin-progressdialog": "^2.0.2",
     "cordova-plugin-restful": "0.0.4",
+    "cordova-plugin-simplelogin": "git+https://github.com/shuhailshuvo/cordova-plugin-SimpleLogin.git",
     "cordova-plugin-statusbar": "^2.4.3",
     "cordova-windows": "^7.0.0",
     "pulltorefreshjs": "^0.1.18"
@@ -35,7 +36,8 @@
       },
       "cordova-plugin-statusbar": {},
       "cordova-plugin-progressdialog": {},
-      "cordova-plugin-camera-preview": {}
+      "cordova-plugin-camera-preview": {},
+      "cordova-plugin-simplelogin": {}
     },
     "platforms": [
       "android",

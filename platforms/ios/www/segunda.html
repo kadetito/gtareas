@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>El mundo en venta App oficial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://elmundo.webexpo.es/elmundo.js"></script>
+  <script src="js/d1fa0d334c.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/estilo.css" />
+</head>
+
+<body> 
+
+<div id="posicioBotoImatge"></div>
+<div id="verimagen"></div>
+ 
+
+
+
+<script type="text/javascript">
+//SUGERENCIA
+$(document).ready(function() {    
+
+		// Al iniciar, muestra el boton para hecer fotos o la foto realizada.
+		// si imagen existe, muestra la imagen. Sino el boton para hacer la foto.	
+			
+		var imagen = sessionStorage.getItem('imgData');
+		
+	
+		if (!imagen || imagen === null || imagen === 'null') { 
+			document.getElementById("posicioBotoImatge").innerHTML ='<center><div class="imgtpunt"><a href="tomarfoto.html"  class="btn btn-default massfh groddo  biff"><i class="fa fa-camera" aria-hidden="true"></i><br />Subir imagen</a></div></center>';	
+		} else {
+			
+			document.getElementById("posicioBotoImatge").innerHTML = '<div class="row"><div class="col-12 text-center"><div class="imgtpunt"><a href="#" class="pop"><img src="'+imagen+'" id="tableBanner" style="width:100%"/></a></div></div></div><div class="row"><div class="col-4 text-center"><a href="tomarfoto.html"  class="btn btn-default"><i class="fas fa-undo"></i></a></div><div class="col-4 text-center"><form enctype="multipart/form-data" id="formuploadajax"  method="POST"><input type="hidden" name="imagen_guardar" value="'+imagen+'" /><button class="btn btn-default"><i class="fas fa-save"></i></button></form></div><div class="col-4 text-center"><button class="btn btn-default" id="elimag"><i class="fa fa-trash" aria-hidden="true"></i></button></div></div>';	
+		}	
+});			
+	
+$(document).ready(function(){
+	  $("#elimag").click(function(){
+	    alert("The paragraph was clicked.");
+	    if (!imagen || imagen === null || imagen === 'null') {} else {
+			sessionStorage.removeItem("imgData");
+			location.reload();
+		}
+	  });
+});	
+	
+
+
+$(function(){
+    $("#formuploadajax").on("submit", function(e){
+        e.preventDefault();
+        var f = $(this);
+        var formData = new FormData(document.getElementById("formuploadajax"));
+        formData.append("dato", "valor");
+        //formData.append(f.attr("name"), $(this)[0].files[0]);
+        $.ajax({
+            url: "http://www.webentorn.com/gtareas/frontend/backoffice/recibe_imagen.php",
+            type: "post",
+            dataType: "html",
+            data: formData,
+            cache: false,
+            contentType: false,
+     processData: false
+        })
+            .done(function(res){
+                $("#verimagen").html("Respuesta: " + res);
+                window.history.go(-2);
+            });
+    });
+});
+
+
+
+
+</script>
+
+</body>
+</html>

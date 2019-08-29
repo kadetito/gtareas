@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.gtareascordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.gtareascordova" version="1.6.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
@@ -14,14 +14,28 @@
     <feature name="XYDialog">
         <param name="android-package" value="org.apache.cordova.xydialog.XYDialog" />
     </feature>
-    <name>GtareasCordova</name>
+    <feature name="RESTful">
+        <param name="android-package" value="cordova.plugin.restful.RESTful" />
+    </feature>
+    <feature name="CameraPreview">
+        <param name="android-package" value="com.cordovaplugincamerapreview.CameraPreview" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SimpleLogin">
+        <param name="android-package" value="yapps.plugins.SimpleLogin" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>gTareas</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Gestión de tareas
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+        Rafa P
     </author>
     <content src="index.html" />
+    <config-file overwrite="true" parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
+        <string>Allow the app to use your camera</string>
+    </config-file>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -30,14 +44,22 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
+    <icon density="ldpi" src="www/res/icon/cordova_android_36.png" />
+    <icon density="mdpi" src="www/res/icon/cordova_android_48.png" />
+    <icon density="hdpi" src="www/res/icon/cordova_android_72.png" />
+    <icon density="xhdpi" src="www/res/icon/cordova_android_96.png" />
+    <icon density="xxhdpi" src="www/res/icon/cordova_ios_144.png" />
+    <splash density="land-hdpi" src="www/res/screen/android_hdpi_landscape.png" />
+    <splash density="land-ldpi" src="www/res/screen/android_ldpi_landscape.png" />
+    <splash density="land-mdpi" src="www/res/screen/android_mdpi_landscape.png" />
+    <splash density="land-xhdpi" src="www/res/screen/android_xhdpi_landscape.png" />
+    <splash density="hdpi" src="www/res/screen/android_hdpi_portrait.png" />
+    <splash density="ldpi" src="www/res/screen/android_ldpi_portrait.png" />
+    <splash density="mdpi" src="www/res/screen/android_mdpi_portrait.png" />
+    <splash density="xhdpi" src="www/res/screen/android_xhdpi_portrait.png" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="StatusBarOverlaysWebView" value="true" />
-    <preference name="LoadingDialog" value="@string/loading" />
-    <feature name="RESTful">
-        <param name="android-package" value="cordova.plugin.restful.RESTful" />
-    </feature>
-    <feature name="CameraPreview">
-        <param name="android-package" value="com.cordovaplugincamerapreview.CameraPreview" />
-        <param name="onload" value="true" />
-    </feature>
+    <preference name="android-minSdkVersion" value="9" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="KeepRunning" value="true" />
 </widget>

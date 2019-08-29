@@ -1,11 +1,11 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "GtareasCordova",
-  "short_name": "GtareasCordova",
+  "name": "gTareas",
+  "short_name": "gTareas",
   "version": "io.cordova.gtareascordova",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "author": "Apache Cordova Team",
+  "description": "Gestión de tareas",
+  "author": "Rafa P",
   "icons": [],
   "start_url": "index.html"
 }
