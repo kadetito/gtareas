@@ -74,7 +74,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-camera": "4.1.0",
     "cordova-plugin-statusbar": "2.4.3",
     "cordova-plugin-progressdialog": "2.0.1",
-    "cordova-plugin-camera-preview": "0.11.0",
-    "cordova-plugin-simplelogin": "1.0.0"
+    "cordova-plugin-camera-preview": "0.11.0"
   };
 });

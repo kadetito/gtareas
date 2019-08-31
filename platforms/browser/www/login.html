@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+	<meta http-equiv="Content-Security-Policy" content=" media-src *; img-src 'self' data: content:;">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
 		<link href="css/simplelogin.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript">
-			var API_URL 	= 'http://example.com/API/';
-			var home_page	= 'home.html';
-			var LOGO	= 'images/app/logo.png';
+			var API_URL 	= 'http://www.webentorn.com/gtareas/frontend/www/';
+			var home_page	= 'index.html';
+			var LOGO	= 'img/logo.png';
 			var signUpRoute = 'signUp';
 			var signUpRoute = 'signInRoute';
 		document.addEventListener("deviceready",function() {
@@ -40,13 +45,13 @@
 	</head>
 	<body>
 		<div id="login-logo">
-			<img src="images/logo.png">
+			<img src="img/logo.png">
 		</div>
 		
 		<div id="back" class="hidden" onclick="user.init()">X</div>
 		
 		<div id="WaitIcon" class="hidden">
-			<img src="images/load.gif">
+			<img src="img/load.gif">
 		</div>
 		
 		<div class="login-form" id="init">

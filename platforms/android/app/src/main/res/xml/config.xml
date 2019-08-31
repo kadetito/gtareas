@@ -21,10 +21,6 @@
         <param name="android-package" value="com.cordovaplugincamerapreview.CameraPreview" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="SimpleLogin">
-        <param name="android-package" value="yapps.plugins.SimpleLogin" />
-        <param name="onload" value="true" />
-    </feature>
     <name>gTareas</name>
     <description>
         Gestión de tareas

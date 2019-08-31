@@ -31,10 +31,6 @@
             {
               "xml": "<feature name=\"CameraPreview\"><param name=\"android-package\" value=\"com.cordovaplugincamerapreview.CameraPreview\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
-            },
-            {
-              "xml": "<feature name=\"SimpleLogin\"><param name=\"android-package\" value=\"yapps.plugins.SimpleLogin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
             }
           ]
         }
@@ -96,9 +92,6 @@
     },
     "cordova-plugin-camera-preview": {
       "ANDROID_SUPPORT_LIBRARY_VERSION": "26+",
-      "PACKAGE_NAME": "io.cordova.gtareascordova"
-    },
-    "cordova-plugin-simplelogin": {
       "PACKAGE_NAME": "io.cordova.gtareascordova"
     }
   },
@@ -167,15 +160,6 @@
       "clobbers": [
         "CameraPreview"
       ]
-    },
-    {
-      "id": "cordova-plugin-simplelogin.SimpleLogin",
-      "file": "plugins/cordova-plugin-simplelogin/www/simplelogin.js",
-      "pluginId": "cordova-plugin-simplelogin",
-      "clobbers": [
-        "SimpleLogin"
-      ],
-      "runs": true
     }
   ],
   "plugin_metadata": {
@@ -184,7 +168,6 @@
     "cordova-plugin-statusbar": "2.4.3",
     "cordova-plugin-progressdialog": "2.0.1",
     "cordova-plugin-restful": "0.0.3",
-    "cordova-plugin-camera-preview": "0.11.0",
-    "cordova-plugin-simplelogin": "1.0.0"
+    "cordova-plugin-camera-preview": "0.11.0"
   }
 }

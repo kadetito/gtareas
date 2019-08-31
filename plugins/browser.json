@@ -24,9 +24,6 @@
     },
     "cordova-plugin-camera-preview": {
       "PACKAGE_NAME": "io.cordova.gtareascordova"
-    },
-    "cordova-plugin-simplelogin": {
-      "PACKAGE_NAME": "io.cordova.gtareascordova"
     }
   },
   "dependent_plugins": {}
