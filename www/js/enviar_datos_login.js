@@ -14,13 +14,29 @@ $(document).ready(function(){
 	              },
 	            success: function(data) {
 	            	
-		                    var content = '';
-		                    var data = $.parseJSON(data);
-			                    $.each(data, function(i, post) {
-			                        content += '' + post.status + '';
-			                    });
-		                    $(content).appendTo("#mensaje");
-		                    alert(content);
+	            	var u = $("#usuarioemp").val();
+	            	var p = $("#passemp").val();
+	            	
+		            var data = $.parseJSON(data);
+
+			            	    $.each(data, function(i, field){
+			            	    	//alert(''+data.identificador+'');
+			            	    	if(data.status=='ok'){
+			            	    		sessionStorage.setItem("usuario", u);
+			            	    		sessionStorage.setItem("password", p);
+			            	    		sessionStorage.setItem("identificador", data.identificador);
+			            	    		window.location.href = "index.html";
+			            	    	} else {
+			            	    		sessionStorage.removeItem("usuario");
+			            	    		sessionStorage.removeItem("password");
+			            	    		alert("los datos no son correctos");
+			            	    	}
+
+			            	    });
+			            
+			            	
+			            	    throw new Error("Something went badly wrong!");
+       	    
 
 	            },
 	            error: function(xhr, ajaxOptions, thrownError) {

@@ -7,7 +7,14 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="msapplication-tap-highlight" content="no">
     <title>gTareas, perfil empleado</title>
-	<script src='js/jquery-2.2.4.min.js'></script>  	
+	<script src='js/jquery-2.2.4.min.js'></script>
+		<script src='js/validar_session_storage.js'></script>  
+	<script type="text/javascript"> 
+	  function preloadFunc() { 
+		  validarSesion();
+		  } 
+	  window.onpaint = preloadFunc(); 
+	 </script>   	
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -26,6 +33,7 @@
 		    $('.sk-fading-circle-back').fadeOut(100);
 		});
 	</script>
+	<script src='js/destruir_session_storage.js'></script>
 </head>
 
 <body class="pt-5"><div class="sk-fading-circle-back">
@@ -73,12 +81,13 @@
 <div id="content">
     <!-- Sidebar  -->
         <nav id="sidebar">
-            <div id="dismiss">
-                <i class="fas fa-arrow-left"></i>
+<!--  <div id="dismiss"><i class="fas fa-arrow-left"></i></div>        -->
+            <div id="logt">
+<!--                 <i class="fas fa-arrow-left"></i> -->
+<button type="submit" class="btn btn-default btn-logout btn-sm" name="logout" id="logout"><i class="fas fa-sign-out-alt"></i></button>
             </div>
             <div class="sidebar-header">
-                <p>Nombre empleado</p>
-                <p>Núm: 883675639</p>
+            <div id="sidebaritem"></div>
             </div>
             <ul class="list-unstyled components">
 				<li class="active"><a href="perfil.html">Empleado</a></li>			

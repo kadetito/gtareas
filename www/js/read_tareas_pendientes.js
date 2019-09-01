@@ -5,9 +5,14 @@ $(document).ready(function() {
 	$(document).bind('deviceready', app.onDeviceReady); 
 });
 
+//identifico al empleado para mostrar sus tareas
+var identificacion_empleado = sessionStorage.getItem("identificador");
+var cryopt = encodeURIComponent(window.btoa(identificacion_empleado));
+
+
 var app = {
 //	posts_url: "http://jsonplaceholder.typicode.com/posts",
-	posts_url: "http://www.webentorn.com/gtareas/backoffice/json/listatareaspendientes.json.php",
+	posts_url: "http://www.webentorn.com/gtareas/backoffice/json/listatareaspendientes.json.php?identi="+cryopt,
 	get_url : "detalletareapendiente.html",
 	onDeviceReady: function() {
 		console.log('Device is ready');

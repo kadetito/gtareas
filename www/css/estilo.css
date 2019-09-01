@@ -84,6 +84,22 @@ a:focus {
     left: 0;
 }
 
+
+
+
+#logt {
+
+
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
 #dismiss {
     width: 35px;
     height: 35px;
@@ -92,7 +108,7 @@ a:focus {
     background: #173131;
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 40px;
     cursor: pointer;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -103,6 +119,16 @@ a:focus {
     background: #fff;
     color: #5CB4B4;
 }
+
+
+
+
+#logt:hover {
+    background: #fff;
+    color: #5CB4B4;
+}
+
+
 
 .overlay {
     display: none;
@@ -244,6 +270,22 @@ a.article:hover {
   color:#666666 !important;
   background-color: #cccccc;
   border: 1px solid #666666;
+  border-radius: 50%;
+  outline:0px;
+/*   margin-left:10px; */
+/*   margin-right:10px; */
+
+}
+
+.btn-logout{
+  padding: 4px ;
+  padding-top:4px;
+  font-size: 1.15rem;
+  line-height: 1;
+  height:30px;width:30px;
+  color:#ffffff !important;
+  background-color: #0A1581;
+  border: 1px solid #0A1581;
   border-radius: 50%;
   outline:0px;
 /*   margin-left:10px; */
