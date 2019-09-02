@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 	$("#accesologin").submit(function(){
 
 			
@@ -46,4 +46,3 @@ $(document).ready(function(){
 		    
 
 	});
-});
