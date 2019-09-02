@@ -33,24 +33,24 @@ var appp = {
 	},
 
 	onSuccess: function(datos) {
-		//var items = [];
+		var items = [];
 		var sidebaritem = [];
 		$.each(datos, function(key, val){
-			//items.push('<div class="card"><div class="card-body"><div class="text-center"><img src="' + val.foto + '" alt="' + val.codigo_empleado + '" /></div><ul><li>N&uacute;mero: ' + val.codigo_empleado + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel.: <a href="tel:' + val.telefono_empleado + '">' + val.telefono_empleado + '</a></li><li>Usuario: ' + val.usuario_empleado + '</li><li>Password: ' + val.password_empleado + '</li></ul></div></div>');
+			items.push('<div class="card"><div class="card-body"><div class="text-center"><img src="' + val.foto + '" alt="' + val.codigo_empleado + '" /></div><ul><li>N&uacute;mero: ' + val.codigo_empleado + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel.: <a href="tel:' + val.telefono_empleado + '">' + val.telefono_empleado + '</a></li><li>Usuario: ' + val.usuario_empleado + '</li><li>Password: ' + val.password_empleado + '</li></ul></div></div>');
 
 			sidebaritem.push('<p>' + val.nombre + ' ' + val.apellido1 + '</p><p>Núm: ' + val.codigo_empleado + '</p>');
 
 		});
-		//$('#posts').html(items.join('<br/>'));
+		$('#posts').html(items.join('<br/>'));
 		$('#sidebaritem').html(sidebaritem.join('<br/>'));
 		console.log('Exiting onSuccess');
 	},
 
-//	onError: function(data, textStatus, errorThrown) {
-//		console.log('Data: ' + data);
-//		console.log('Status: ' + textStatus);
-//		console.log('Error: ' + errorThrown);
-//		$("#posts").html('Error while loading posts');
-//		console.log('Exiting onError');
-//	}
+	onError: function(data, textStatus, errorThrown) {
+		console.log('Data: ' + data);
+		console.log('Status: ' + textStatus);
+		console.log('Error: ' + errorThrown);
+		$("#posts").html('Error while loading posts');
+		console.log('Exiting onError');
+	}
 };
