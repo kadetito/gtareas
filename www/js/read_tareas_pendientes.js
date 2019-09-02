@@ -37,7 +37,7 @@ var app = {
 		var items = [];
 		$.each(data, function(key, val){
 					
-			items.push('<div class="card"><div class="card-body"><a href="' + app.get_url +'?param='+ val.id_tarea + '">' + val.fecha + ' - ' +val.codigo_tarea + ' - ' +val.titulo + '</a></div></div>');
+			items.push('<div class="card"><div class="card-body"><a class="enlacetarea" href="' + app.get_url +'?param='+ val.id_tarea + '"><span class="fechas">' + val.fecha + '</span> - ' +val.codigo_tarea + ' <h5>' +val.titulo + '</h5><div class="icono_ir"><i class="fas fa-chevron-circle-right"></i></div></a></div></div>');
 			
 		});
 		$('#posts').html(items.join('<br/>'));
@@ -48,7 +48,7 @@ var app = {
 		console.log('Data: ' + data);
 		console.log('Status: ' + textStatus);
 		console.log('Error: ' + errorThrown);
-		$("#posts").html('Error while loading posts');
+		$("#posts").html('No hay tareas pendientes');
 		console.log('Exiting onError');
 	}
 };
