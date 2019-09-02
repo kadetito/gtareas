@@ -33,7 +33,7 @@
 <script>
 $("#sending").click(function(){
 
-	
+	event.preventDefault();
     $.ajax({
         type: "POST",
         datatype: "JSON",
@@ -52,7 +52,7 @@ $("#sending").click(function(){
             var data = $.parseJSON(data);
 
 	            	    $.each(data, function(i, field){
-	            	    	//alert(''+data.identificador+'');
+	            	    
 	            	    	if(data.status=='ok'){
 	            	    		sessionStorage.setItem("usuario", u);
 	            	    		sessionStorage.setItem("password", p);
@@ -76,7 +76,7 @@ $("#sending").click(function(){
         }
     });
     
-
+    //alert('');
 });
 </script>
 </body>
