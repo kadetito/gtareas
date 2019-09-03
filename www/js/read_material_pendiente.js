@@ -9,10 +9,11 @@ $(document).ready(function() {
 var identificacion_empleado = sessionStorage.getItem("identificador");
 var cryopt = encodeURIComponent(window.btoa(identificacion_empleado));
 
+
 var app = {
 //	posts_url: "http://jsonplaceholder.typicode.com/posts",
-	posts_url: "http://www.webentorn.com/gtareas/backoffice/tareas_material_devuelto.json",
-	get_url : "detallematerial.html",
+	posts_url: "http://www.webentorn.com/gtareas/backoffice/json/listamaterialespendientes.json.php?identi="+cryopt,
+	get_url : "detallematerialpendiente.html",
 	onDeviceReady: function() {
 		console.log('Device is ready');
 		app.readPosts();
@@ -31,12 +32,14 @@ var app = {
 		console.log('Reading posts asynchrounously');
 	},
 
+	
 	onSuccess: function(data) {
 		var items = [];
 		$.each(data, function(key, val){
 					
-			items.push('<div class="card"><div class="card-body"><a href="' + app.get_url +'?param='+ val.id + '">' + val.fecha + ' - ' +val.title + '</a></div></div>');
+			items.push('<div class="card"><div class="card-body"><a class="enlacetarea" href="' + app.get_url +'?param='+ val.id_material + '"><span class="fechas">' + val.fecha_peticion + '</span> - ' +val.id_tarea + ' <h5>' +val.nombre + '</h5><div class="icono_ir"><i class="fas fa-chevron-circle-right"></i></div></a></div></div>');
 			
+		    
 		});
 		$('#posts').html(items.join('<br/>'));
 		console.log('Exiting onSuccess');
@@ -46,7 +49,7 @@ var app = {
 		console.log('Data: ' + data);
 		console.log('Status: ' + textStatus);
 		console.log('Error: ' + errorThrown);
-		$("#posts").html('Error while loading posts');
+		$("#posts").html('No hay materiales pendientes');
 		console.log('Exiting onError');
 	}
 };

@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Security-Policy" content=" media-src *; img-src 'self' data: content:;">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="msapplication-tap-highlight" content="no">
-    <title>gTareas, material pendiente</title>
+    <title>gTareas, perfil empleado</title>
 	<script src='js/jquery-2.2.4.min.js'></script>  	
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
@@ -25,9 +25,8 @@
 	var cparam = url.searchParams.get("param");
 	console.log(cparam);
     </script>	
-		<script src='js/read_tareas_material_pendiente.js'></script>  	
-		
-	<script src='js/read_perfil.js'></script> 
+		<script src='js/read_material_pendiente.js'></script>  	
+			<script src='js/read_perfil.js'></script> 
 </head>
 
 <body class="pt-5"><div class="sk-fading-circle-back">
@@ -78,13 +77,13 @@
             <div id="dismiss">
                 <i class="fas fa-arrow-left"></i>
             </div>
-       <div class="sidebar-header"><div id="sidebaritem"></div></div>
+<div class="sidebar-header"><div id="sidebaritem"></div></div>
             <ul class="list-unstyled components">
 				<li><a href="perfil.html">Empleado</a></li>			
 				<li>
                     <a href="#homeSubmenuTar" data-toggle="collapse" aria-expanded="false">Tareas</a>
                     <ul class="collapse list-unstyled" id="homeSubmenuTar">
-                        <li>
+                        <li >
                             <a href="tareaspendientes.html" >Tareas pendientes</a>
                         </li>
                         <li>
@@ -99,7 +98,7 @@
                             <a href="materialpendiente.html" >Material pendiente</a>
                         </li>
                         <li>
-                            <a href="materialdevuelto.html" >Material devuelto</a>
+                            <a href="materialdevuelto.html" >Material entregado/devuelto</a>
                         </li>
                     </ul>
                 </li>
@@ -116,10 +115,14 @@
 <!--// -->
 	
 <div  class="section"><div class="alzador2" id="section-1"></div>
-	  <h3>Material pendiente</h3>
-	<div data-role="page" id="main">
-		<div data-role="content" id="posts">Posts to be shown here</div>
+	  <h3>Materiales pendientes</h3>
+	  
+
+	<div id="main">
+		<div data-role="content" id="posts">...cargando contenido</div>
 	</div>
+
+
 </div>
 <!-- //
 <!--// fin SECCION 1 
@@ -144,7 +147,7 @@
 		<script>
 includeHTML();
 </script>
-   
+  
 </body>
 
 </html>

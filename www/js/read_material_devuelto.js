@@ -11,8 +11,8 @@ var cryopt = encodeURIComponent(window.btoa(identificacion_empleado));
 
 var app = {
 //	posts_url: "http://jsonplaceholder.typicode.com/posts",
-	posts_url: "http://www.webentorn.com/gtareas/backoffice/tareas_material_pendiente.json",
-	get_url : "detallematerial.html",
+		posts_url: "http://www.webentorn.com/gtareas/backoffice/json/listamaterialesdevueltos.json.php",
+	get_url : "detallematerialdevuelto.html",
 	onDeviceReady: function() {
 		console.log('Device is ready');
 		app.readPosts();
@@ -35,7 +35,16 @@ var app = {
 		var items = [];
 		$.each(data, function(key, val){
 					
-			items.push('<div class="card"><div class="card-body"><a href="' + app.get_url +'?param='+ val.id + '">' + val.fecha + ' - ' +val.title + '</a></div></div>');
+			
+
+			if ((val.obtenido == 'S') && (val.devuelto =='N')) {
+
+			var icono = '<div class="icono_obde"><i class="fas fa-calendar-check"></i></div>';
+			} else if((val.obtenido == 'N') && (val.devuelto =='S')){
+			var icono = '<div class="icono_deob"><i class="fas fa-undo"></i></div>';				
+			}
+			
+			items.push('<div class="card"><div class="card-body"><a class="enlacetarea" href="' + app.get_url +'?param='+ val.id_material + '"><span class="fechas">' + val.fecha_peticion + '</span> - ' +val.id_tarea + ' <h5>' +val.nombre + '</h5>'+icono+'<div class="icono_ir"><i class="fas fa-chevron-circle-right"></i></div></a></div></div>');
 			
 		});
 		$('#posts').html(items.join('<br/>'));
@@ -46,7 +55,7 @@ var app = {
 		console.log('Data: ' + data);
 		console.log('Status: ' + textStatus);
 		console.log('Error: ' + errorThrown);
-		$("#posts").html('Error while loading posts');
+		$("#posts").html('No hay materiales entregados o devueltos');
 		console.log('Exiting onError');
 	}
 };

@@ -33,10 +33,33 @@ var appp = {
 	},
 
 	onSuccess: function(datos) {
+		
+		
+		
+
+		
+		
+		
 		var items = [];
 		var sidebaritem = [];
 		$.each(datos, function(key, val){
-			items.push('<div class="card"><div class="card-body"><div class="text-center"><img src="' + val.foto + '" alt="' + val.codigo_empleado + '" /></div><ul><li>N&uacute;mero: ' + val.codigo_empleado + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel.: <a href="tel:' + val.telefono_empleado + '">' + val.telefono_empleado + '</a></li><li>Usuario: ' + val.usuario_empleado + '</li><li>Password: ' + val.password_empleado + '</li></ul></div></div>');
+			
+			
+			//resizo la imagen al meterla en un canvas, determino el tamanio por css
+			window.onload = function() {
+				var canvas = document.getElementById('image');
+				var ctx = canvas.getContext('2d');
+				var img = new Image();
+				img.onload = function(){
+				canvas.width = img.naturalWidth
+				canvas.height = img.naturalHeight
+				ctx.drawImage(img, 0, 0);
+				}
+				img.src = val.foto;
+			}
+			
+			
+			items.push('<div class="card"><div class="card-body"><div class="text-center"><canvas id="image"></canvas></div><ul><li>N&uacute;mero: ' + val.codigo_empleado + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel.: <a href="tel:' + val.telefono_empleado + '">' + val.telefono_empleado + '</a></li><li>Usuario: ' + val.usuario_empleado + '</li><li>Password: ' + val.password_empleado + '</li></ul></div></div>');
 
 			sidebaritem.push('<p>' + val.nombre + ' ' + val.apellido1 + '</p><p>Núm: ' + val.codigo_empleado + '</p>');
 
