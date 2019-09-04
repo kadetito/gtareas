@@ -4,8 +4,8 @@
     function initCanvas() {
         canvasDiv = document.getElementById('canvasDiv');
         canvas = document.createElement('canvas');
-        canvas.setAttribute('width', 400);
-        canvas.setAttribute('height', 400);
+        canvas.setAttribute('width', 340);
+        canvas.setAttribute('height', 150);
         canvas.setAttribute('id', 'canvas');
         canvasDiv.appendChild(canvas);
         if(typeof G_vmlCanvasManager != 'undefined') {
@@ -46,6 +46,8 @@
     repinta();
 }
 
+    
+    
 function repinta(){
 canvas.width = canvas.width; // Limpia el lienzo
 
