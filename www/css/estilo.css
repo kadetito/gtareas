@@ -16,6 +16,7 @@ h1,h2,h3{color:#333333;}
 h3{font-size:12px;text-transform:uppercase;border-bottom:1px solid #000;padding-bottom:3px;}
 
 
+
 p {
    font-family: 'Roboto', sans-serif;
     font-size: 0.8em;
@@ -387,3 +388,22 @@ h1 {
 .section a {
   color: #3399FF;
 }
+
+
+.centrador{
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0 0 auto;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.minitextoh5{font-size:12px;}
+.bodydatosin label{font-size:13px;}
+
+.blu{background-color:#161d52;border:0px;}
+.gre{background-color:#333333;border:0px;}
+
+a.blu{color:#ffffff !important;}
+a.gre{color:#ffffff !important;}

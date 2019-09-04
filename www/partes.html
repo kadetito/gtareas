@@ -116,7 +116,16 @@
 <!--// -->
 	
 <div  class="section"><div class="alzador2" id="section-1"></div>
-	  <h3>Partes</h3>
+	 <h3>Partes</h3>
+	 
+	 <div class="row">
+	  <div class="col-4"></div>
+	  <div class="col-8 text-right">
+<!-- 	  <a href="" class="btn btn-warning btn-sm blu">Ver partes <i class="fas fa-folder-open"></i></a> -->
+	  <a id="modal-258015" href="#modal-container-258015" role="button" data-toggle="modal"  class="btn btn-warning btn-sm gre">Crear parte <i class="fas fa-file-alt"></i></a>
+	  </div>
+	 </div>
+
 	<div data-role="page" id="main">
 		<div data-role="content" id="posts">...cargando contenido</div>
 	</div>
@@ -131,6 +140,90 @@
 
 <div class="overlay"></div>
 
+
+
+
+<!-- modal crear parte -->
+<div class="modal fade" id="modal-container-258015" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="myModalLabel">
+								Crear nuevo parte de trabajo
+							</h5> 
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body bodydatosin">
+<form id="formCanvas" method="post" action="#" ENCTYPE="multipart/form-data">
+				<input type="hidden" name="id_empleado" value="" />
+				<input type="hidden" name="fecha" value="" />
+					<h5 class="minitextoh5">Fecha: escribir fecha</h5>
+				<div class="form-group">
+					<label for="id_tarea">Tarea</label>
+					<select class="form-control" id="id_tarea" name="id_tarea"></select>
+				</div>
+				<div class="form-group">
+					<label for="id_cliente">Cliente</label>
+					<select class="form-control" id="id_cliente" name="id_cliente"></select>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<div class="form-group ">
+							<label for="hora_inicio">Desde</label>
+							<input type="text" class="form-control" id="hora_inicio" name="hora_inicio" />
+						</div>
+					</div>
+					<div class="col-6">				
+						<div class="form-group ">
+							<label for="hora_fin">Hasta</label>
+							<input type="text" class="form-control" id="hora_fin" name="hora_fin" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="observaciones">Observaciones</label>
+					<textarea class="form-control" id="observaciones" name="observaciones" rows="2"></textarea>
+				</div>
+				
+				<div class="centrador">			
+					<div class="form-group">
+						<label for="firma">Firma cliente</label>
+						<canvas id="canvas" width="280" height="200" style="border: 1px solid #CCC;"></canvas>
+						<input type="hidden" name="firma" id="firma" />
+					</div>
+				</div>		
+
+				<div class="form-group text-center">
+						<input type="submit" class="btn" id="crearparte" onclick='GuardarTrazado()' name="crearparte" value="Crear parte" />
+				</div>
+
+
+</form>
+
+						</div>
+					</div>			
+				</div>	
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <script src="js/d1fa0d334c.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -142,8 +235,10 @@
 		<script src="js/jquery.cookie-1.3.1.js"></script>
 				<script src="js/pulltorefresh.js"></script>
 <script src="js/comun.js"></script>
+<script src="js/firmadigital.js"></script>
 		<script>
 includeHTML();
+$('#modal-container-258015').modal({backdrop: 'static', keyboard: false})
 </script>
    
 </body>
