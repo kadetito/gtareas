@@ -29,7 +29,7 @@
 		<script src='js/read_perfil.js'></script> 
 </head>
 
-<body class="pt-5"><div class="sk-fading-circle-back">
+<body class="pt-5" onload="initCanvas();"><div class="sk-fading-circle-back">
 	  <div class="sk-fading-circle">
 		  <div class="sk-circle1 sk-circle"></div>
 		  <div class="sk-circle2 sk-circle"></div>
@@ -182,21 +182,19 @@
 						</div>
 					</div>
 				</div>
+				<div class="centrador">			
+					<div class="form-group">
+						<label for="firma">Firma cliente</label>
+						<div id="canvasDiv" style="width: 310px; height: 150px; background: #f5f5f6;"></div>
+					</div>
+				</div>		
 				<div class="form-group">
 					<label for="observaciones">Observaciones</label>
 					<textarea class="form-control" id="observaciones" name="observaciones" rows="2"></textarea>
 				</div>
-				
-				<div class="centrador">			
-					<div class="form-group">
-						<label for="firma">Firma cliente</label>
-						<canvas id="canvas" width="280" height="200" style="border: 1px solid #CCC;"></canvas>
-						<input type="hidden" name="firma" id="firma" />
-					</div>
-				</div>		
-
 				<div class="form-group text-center">
-						<input type="submit" class="btn" id="crearparte" onclick='GuardarTrazado()' name="crearparte" value="Crear parte" />
+					<!-- <img style="width:60px; height:60px" id="imagen" src="/uploads/imagen.png" /> -->
+					<input type="submit" class="btn" id="guardar" onclick="upload();" name="guardar" value="Crear parte" />
 				</div>
 
 
