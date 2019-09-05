@@ -7,7 +7,14 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="msapplication-tap-highlight" content="no">
     <title>gTareas, Partes</title>
-	<script src='js/jquery-2.2.4.min.js'></script>  	
+	<script src='js/jquery-2.2.4.min.js'></script>  
+			<script src='js/validar_session_storage.js'></script>  	
+			<script type="text/javascript"> 
+	  function preloadFunc() { 
+		  validarSesion();
+		  } 
+	  window.onpaint = preloadFunc(); 
+	 </script> 	
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -29,7 +36,7 @@
 		<script src='js/read_perfil.js'></script> 
 </head>
 
-<body class="pt-5" onload="initCanvas();"><div class="sk-fading-circle-back">
+<body class="pt-5" ><div class="sk-fading-circle-back">
 	  <div class="sk-fading-circle">
 		  <div class="sk-circle1 sk-circle"></div>
 		  <div class="sk-circle2 sk-circle"></div>

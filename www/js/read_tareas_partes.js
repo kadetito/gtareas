@@ -12,7 +12,7 @@ var cryopt = encodeURIComponent(window.btoa(identificacion_empleado));
 
 var app = {
 //	posts_url: "http://jsonplaceholder.typicode.com/posts",
-	posts_url: "http://www.webentorn.com/gtareas/backoffice/json/listapartes.json.php?identi="+cryopt,
+	posts_url: "http://www.webentorn.com/gtareas/backoffice/json/listapartes.json.php?id_empleado="+identificacion_empleado,
 	get_url : "detallepartes.html",
 	onDeviceReady: function() {
 		console.log('Device is ready');
@@ -37,7 +37,7 @@ var app = {
 		var items = [];
 		$.each(data, function(key, val){
 					
-			items.push('<div class="card"><div class="card-body"><a class="enlacetarea" href="' + app.get_url +'?param='+ val.id_tarea + '"><span class="fechas">' + val.fecha + '</span> - ' +val.codigo_tarea + ' <h5>' +val.titulo + '</h5><div class="icono_ir"><i class="fas fa-chevron-circle-right"></i></div></a></div></div>');
+			items.push('<div class="card"><div class="card-body"><a class="enlacetarea" href="' + app.get_url +'?param='+ val.id_tarea + '"><span class="fechas">' + val.fecha + '</span> - ' +val.id_tarea + '<div class="icono_ir"><i class="fas fa-chevron-circle-right"></i></div></a></div></div>');
 			
 		});
 		$('#posts').html(items.join('<br/>'));

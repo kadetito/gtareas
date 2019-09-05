@@ -1,8 +1,11 @@
 //$(DOCUMENT).READY(FUNCTION(){
 
 	function validarSesion() {
-	
-	
+
+var identificacion_emplead = sessionStorage.getItem("identificador");
+if(identificacion_emplead == ''){
+	alert();
+} else {
 	var u = sessionStorage.getItem("usuario", u);
 	var p = sessionStorage.getItem("password", p);
 	var i = sessionStorage.getItem("identificador", i);
@@ -42,5 +45,5 @@
 	        });
 		    
 	}
-
+	}
 //});
