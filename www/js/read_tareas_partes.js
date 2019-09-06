@@ -37,7 +37,7 @@ var app = {
 		var items = [];
 		$.each(data, function(key, val){
 					
-			items.push('<div class="card"><div class="card-body"><a class="enlacetarea" href="' + app.get_url +'?param='+ val.id_tarea + '"><span class="fechas">' + val.fecha + '</span> - ' +val.id_tarea + '<div class="icono_ir"><i class="fas fa-chevron-circle-right"></i></div></a></div></div>');
+			items.push('<a class="enlacetarea" href="' + app.get_url +'?param='+ val.id_tarea + '"><div class="card"><div class="card-body"><span class="fechas">' + val.fecha + '</span> - ' +val.titulo + '<div class="icono_ir"><i class="fas fa-chevron-circle-right"></i></div></div></div></a>');
 			
 		});
 		$('#posts').html(items.join('<br/>'));

@@ -59,7 +59,7 @@ var appp = {
 			}
 			
 			
-			items.push('<div class="card"><div class="card-body"><div class="text-center"><canvas id="image"></canvas></div><ul><li>N&uacute;mero: ' + val.codigo_empleado + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel.: <a href="tel:' + val.telefono_empleado + '">' + val.telefono_empleado + '</a></li><li>Usuario: ' + val.usuario_empleado + '</li><li>Password: ' + val.password_empleado + '</li></ul></div></div>');
+			items.push('<div class="card"><div class="card-body"><div class="text-center"><canvas id="image"></canvas></div><ul><li>N&uacute;mero: ' + val.codigo_empleado + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel: ' + val.telefono_empleado + '</li><li>Usuario: ' + val.usuario_empleado + '</li><li>Password: ' + val.password_empleado + '</li></ul></div></div>');
 
 			sidebaritem.push('<p>' + val.nombre + ' ' + val.apellido1 + '</p><p>Núm: ' + val.codigo_empleado + '</p>');
 

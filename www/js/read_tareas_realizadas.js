@@ -35,10 +35,10 @@ var app = {
 		var items = [];
 		$.each(data, function(key, val){
 					
-			items.push('<div class="card"><div class="card-body"><a class="enlacetarea" href="' + app.get_url +'?param='+ val.id_tarea + '"><span class="fechas">' + val.fecha + '</span> - ' +val.codigo_tarea + ' <h5>' +val.titulo + '</h5><div class="icono_ir"><i class="fas fa-chevron-circle-right"></i></div></a></div></div>');
+			items.push('<div class="row row-striped"><div class="col-2 text-center"><h3 class="displaydia">'+val.numerodia+'</h3><h4 class="nombremes">'+val.nombremes+'</h4></div><div class="col-10"><a class="enlacetarea" href="' + app.get_url +'?param='+ val.id_tarea + '"><h3 class="text-uppercase"><strong>' +val.titulo + '</strong></h3><ul class="list-inline"><li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> '+val.nombredia+'</li><li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li><li class="list-inline-item"><i class="fas fa-chevron-circle-right"></i></li></ul><p>'+val.resumen+'</p></a></div></div>');
 			
 		});
-		$('#posts').html(items.join('<br/>'));
+		$('#posts').html(items.join(''));
 		console.log('Exiting onSuccess');
 	},
 

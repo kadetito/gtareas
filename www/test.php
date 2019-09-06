@@ -1,81 +1,65 @@
 
+<!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--[if IE]><script type="text/javascript" src="/excanvas_r3/excanvas.js"></script><![endif]-->
-<script type="text/javascript">
-  var movimientos = new Array();
-  var pulsado;
 
-    function initCanvas() {
-        canvasDiv = document.getElementById('canvasDiv');
-        canvas = document.createElement('canvas');
-        canvas.setAttribute('width', 400);
-        canvas.setAttribute('height', 400);
-        canvas.setAttribute('id', 'canvas');
-        canvasDiv.appendChild(canvas);
-        if(typeof G_vmlCanvasManager != 'undefined') {
-            canvas = G_vmlCanvasManager.initElement(canvas);
-        }
-        context = canvas.getContext("2d");
 
-        $('#canvas').bind('touchstart',function(event){
-          var e = event.originalEvent;
-          e.preventDefault();
-          pulsado = true;
-          movimientos.push([e.targetTouches[0].pageX - this.offsetLeft,
-              e.targetTouches[0].pageY - this.offsetTop,
-              false]);
-          repinta();
-        });
 
-        $('#canvas').bind('touchmove',function(event){
-          var e = event.originalEvent;
-          e.preventDefault();
-          if(pulsado){
-              movimientos.push([e.targetTouches[0].pageX - this.offsetLeft,
-                e.targetTouches[0].pageY - this.offsetTop,
-                true]);
-        repinta();
-        }
+
+     <script src='js/jquery-2.2.4.min.js'></script> 
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css">
+      <link rel="stylesheet" type="text/css" href="maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+    window.onload=function(){
+      
+$(document).ready(function() {
+    $('#datetimepicker').datetimepicker({
+        inline: true,
+        format: 'DD/MM/YYYY'
     });
-    
-    $('#canvas').bind('touchend',function(event){
-        var e = event.originalEvent;
-        e.preventDefault();
-        pulsado = false;
-    });
-    
-    $('#canvas').mouseleave(function(e){
-        pulsado = false;
-    });
-    repinta();
-}
 
-function repinta(){
-canvas.width = canvas.width; // Limpia el lienzo
+    $('div tbody').on('click', 'tr > .day',function(){
+    	alert($(this).data().day)
+    })
+});
 
-context.strokeStyle = "#0000a0";
-context.lineJoin = "round";
-context.lineWidth = 6;
-for(var i=0; i < movimientos.length; i++)
-{     
-context.beginPath();
-if(movimientos[i][2] && i){
-    context.moveTo(movimientos[i-1][0], movimientos[i-1][1]);
-    }else{
-    context.moveTo(movimientos[i][0], movimientos[i][1]);
     }
-    context.lineTo(movimientos[i][0], movimientos[i][1]);
-    context.closePath();
-    context.stroke();
-}
-}
-</script>
+
+  //]]></script>
+
 </head>
-<body style="background: #eee;" onload="initCanvas();">
-<div id="canvasDiv" 
-    style="width: 400px; height: 400px; background: #fff;"></div>
+<body>
+    <body>
+	<div style="overflow:hidden;">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="datetimepicker"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+
+  
+
 </body>
 </html>

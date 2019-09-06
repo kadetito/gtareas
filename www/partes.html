@@ -25,6 +25,7 @@
 		    $('.sk-fading-circle-back').fadeOut(100);
 		});
 	</script>
+	<script src='js/read_perfil.js'></script> 
 			    <script type="text/javascript">
     //recojo los parametros por URL 
 	var url_string = window.location.href;
@@ -34,6 +35,7 @@
     </script>	
 		<script src='js/read_tareas_partes.js'></script>  	
 		<script src='js/read_perfil.js'></script> 
+			<script src='js/destruir_session_storage.js'></script>
 </head>
 
 <body class="pt-5" ><div class="sk-fading-circle-back">
@@ -81,9 +83,9 @@
 <div id="content">
     <!-- Sidebar  -->
         <nav id="sidebar">
-            <div id="dismiss">
-                <i class="fas fa-arrow-left"></i>
-            </div>
+<div id="logt">
+<button type="submit" class="btn btn-default btn-logout btn-sm" name="logout" id="logout"><i class="fas fa-sign-out-alt"></i></button>
+</div>
        <div class="sidebar-header"><div id="sidebaritem"></div></div>
 
             <ul class="list-unstyled components">
@@ -130,13 +132,14 @@
 	  <div class="col-8 text-right">
 <!-- 	  <a href="" class="btn btn-warning btn-sm blu">Ver partes <i class="fas fa-folder-open"></i></a> -->
 	  <a href="crear_parte.html" role="button"   class="btn btn-warning btn-sm gre">Crear parte <i class="fas fa-file-alt"></i></a>
+	  <div class="alzador3" ></div>
 	  </div>
 	 </div>
 
 	<div data-role="page" id="main">
 		<div data-role="content" id="posts">...cargando contenido</div>
 	</div>
-
+<div class="alzadorlong"></div>
 </div>
 <!-- //
 <!--// fin SECCION 1 

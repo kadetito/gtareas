@@ -251,9 +251,9 @@ a.article:hover {
 @media only all and (max-height:40em) { 
 	.alzador2{height:85px;}
 }
-.alzador3{height:25px;}
+.alzador3{height:35px;}
 @media only all and (max-height:40em) { 
-	.alzador3{height:35px;}
+	.alzador3{height:45px;}
 }
 
 /* .btn-default{ */
@@ -268,9 +268,32 @@ a.article:hover {
 
 /* } */
 
+
+.row-striped:nth-of-type(odd){
+  background-color: #efefef;
+
+}
+
+.row-striped:nth-of-type(even){
+  background-color: #ffffff;
+ border-bottom:1px solid #efefef;
+}
+
+.row-striped {
+    padding: 12px 0;
+}
+.row-striped h2{
+    
+}
+.nombremes{font-size:16px;margin-left:5px;text-transform:uppercase;width:100%;}
+.displaydia{font-size:23px;color:#ffffff;margin-left:5px;padding:2px;width:100%;background-color:#666666;text-align:center !important;}
+
+
+
+
 .silencetext{font-size:13px;}
 .silencetextdisbled{font-size:13px;color:#ededed;}
-
+.alzadorlong{height:130px;}
 .btn-default{
   padding: 10px ;
   padding-top:13px;
