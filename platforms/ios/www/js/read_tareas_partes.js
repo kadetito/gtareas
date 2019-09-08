@@ -5,10 +5,15 @@ $(document).ready(function() {
 	$(document).bind('deviceready', app.onDeviceReady); 
 });
 
+//identifico al empleado para mostrar sus tareas
+var identificacion_empleado = sessionStorage.getItem("identificador");
+var cryopt = encodeURIComponent(window.btoa(identificacion_empleado));
+
+
 var app = {
 //	posts_url: "http://jsonplaceholder.typicode.com/posts",
-	posts_url: "http://www.webentorn.com/gtareas/backoffice/tareas_partes.json",
-	get_url : "detalleparte.html",
+	posts_url: "http://www.webentorn.com/gtareas/backoffice/json/listapartes.json.php?id_empleado="+identificacion_empleado,
+	get_url : "detallepartes.html",
 	onDeviceReady: function() {
 		console.log('Device is ready');
 		app.readPosts();
@@ -27,11 +32,12 @@ var app = {
 		console.log('Reading posts asynchrounously');
 	},
 
+	
 	onSuccess: function(data) {
 		var items = [];
 		$.each(data, function(key, val){
 					
-			items.push('<div class="card"><div class="card-body"><a href="' + app.get_url +'?param='+ val.id + '">' + val.fecha + ' - ' +val.title + '</a></div></div>');
+			items.push('<a class="enlacetarea" href="' + app.get_url +'?param='+ val.id_tarea + '"><div class="card"><div class="card-body"><span class="fechas">' + val.fecha + '</span> - ' +val.titulo + '<div class="icono_ir"><i class="fas fa-chevron-circle-right"></i></div></div></div></a>');
 			
 		});
 		$('#posts').html(items.join('<br/>'));
@@ -42,7 +48,7 @@ var app = {
 		console.log('Data: ' + data);
 		console.log('Status: ' + textStatus);
 		console.log('Error: ' + errorThrown);
-		$("#posts").html('Error while loading posts');
+		$("#posts").html('No hay tareas pendientes');
 		console.log('Exiting onError');
 	}
 };

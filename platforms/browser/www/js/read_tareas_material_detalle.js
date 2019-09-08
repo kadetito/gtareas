@@ -5,6 +5,10 @@ $(document).ready(function() {
 	$(document).bind('deviceready', app.onDeviceReady); 
 });
 
+//identifico al empleado para mostrar sus tareas
+var identificacion_empleado = sessionStorage.getItem("identificador");
+var cryopt = encodeURIComponent(window.btoa(identificacion_empleado));
+
 var app = {
 //TODO recibo el aparametro cparam con la id del registro y se la paso a la url para que me cree el archivo JSOn desde la BBDD
 //eventualmente muestro un JSOn de prueba con el mismo registro siempre

@@ -65,13 +65,20 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
-      "id": "cordova-plugin-simplelogin.SimpleLogin",
-      "file": "plugins/cordova-plugin-simplelogin/www/simplelogin.js",
-      "pluginId": "cordova-plugin-simplelogin",
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
       "clobbers": [
-        "SimpleLogin"
-      ],
-      "runs": true
+        "device"
+      ]
+    },
+    {
+      "id": "cordova-plugin-badge.Badge",
+      "file": "plugins/cordova-plugin-badge/www/badge.js",
+      "pluginId": "cordova-plugin-badge",
+      "clobbers": [
+        "cordova.plugins.notification.badge"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -81,6 +88,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-progressdialog": "2.0.1",
     "cordova-plugin-restful": "0.0.3",
     "cordova-plugin-camera-preview": "0.11.0",
-    "cordova-plugin-simplelogin": "1.0.0"
+    "cordova-plugin-device": "2.0.3",
+    "cordova-plugin-badge": "0.8.8"
   };
 });

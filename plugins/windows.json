@@ -21,6 +21,12 @@
     },
     "cordova-plugin-camera-preview": {
       "PACKAGE_NAME": "GtareasCordova"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "gTareas"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "gTareas"
     }
   },
   "dependent_plugins": {}
