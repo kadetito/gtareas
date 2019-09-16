@@ -29,8 +29,6 @@
 		475532809E9D4C099DCBF390 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD44CA906E4FAF87262048 /* CoreVideo.framework */; };
 		3F4035FBCF9A4E28A3CDCEEE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F315D6CDEC54C5FA57052EA /* QuartzCore.framework */; };
 		46988D92097B4596835CFDE2 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E560B733A0624AA4B04968E0 /* CDVStatusBar.m */; };
-		7CBEFC6F0C214B13B42051CF /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CCE3A21EF64EC9837F669A /* CDVDevice.m */; };
-		6F5E19D7659645358FBDADF8 /* APPBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = A49E271D281F4E6486D4C620 /* APPBadge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,10 +101,6 @@
 		6F315D6CDEC54C5FA57052EA /* QuartzCore.framework */ = {isa = PBXFileReference; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		E560B733A0624AA4B04968E0 /* CDVStatusBar.m */ = {isa = PBXFileReference; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		BF46A69C1E7A49A5B824A932 /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		D4CCE3A21EF64EC9837F669A /* CDVDevice.m */ = {isa = PBXFileReference; name = "CDVDevice.m"; path = "cordova-plugin-device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		D3F959F964324DE58351CB1A /* CDVDevice.h */ = {isa = PBXFileReference; name = "CDVDevice.h"; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		A49E271D281F4E6486D4C620 /* APPBadge.m */ = {isa = PBXFileReference; name = "APPBadge.m"; path = "cordova-plugin-badge/APPBadge.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		C3FF7FD4B6844976819D953E /* APPBadge.h */ = {isa = PBXFileReference; name = "APPBadge.h"; path = "cordova-plugin-badge/APPBadge.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,10 +238,6 @@
 				CDCA1EA61FCC42A682C72F73 /* CameraRenderController.h */,
 				E560B733A0624AA4B04968E0 /* CDVStatusBar.m */,
 				BF46A69C1E7A49A5B824A932 /* CDVStatusBar.h */,
-				D4CCE3A21EF64EC9837F669A /* CDVDevice.m */,
-				D3F959F964324DE58351CB1A /* CDVDevice.h */,
-				A49E271D281F4E6486D4C620 /* APPBadge.m */,
-				C3FF7FD4B6844976819D953E /* APPBadge.h */,
 			);
 			name = Plugins;
 			path = "gTareas/Plugins";
@@ -380,8 +370,6 @@
 				7B961595A9E343D7A58DDA57 /* CameraSessionManager.m in Sources */,
 				3624F252E4774CDCA77F9CCE /* CameraRenderController.m in Sources */,
 				46988D92097B4596835CFDE2 /* CDVStatusBar.m in Sources */,
-				7CBEFC6F0C214B13B42051CF /* CDVDevice.m in Sources */,
-				6F5E19D7659645358FBDADF8 /* APPBadge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

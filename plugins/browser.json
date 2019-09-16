@@ -21,12 +21,6 @@
     },
     "cordova-plugin-camera-preview": {
       "PACKAGE_NAME": "io.cordova.gtareascordova"
-    },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "io.cordova.gtareascordova"
-    },
-    "cordova-plugin-badge": {
-      "PACKAGE_NAME": "io.cordova.gtareascordova"
     }
   },
   "dependent_plugins": {}
