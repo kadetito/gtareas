@@ -8,6 +8,7 @@
         Rafa P
     </author>
     <content src="index.html" />
+    <gap:plugin name="cordova-plugin-badge" source="npm" version="0.8.8" />
     <config-file overwrite="true" parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
         <string>Allow the app to use your camera</string>
     </config-file>

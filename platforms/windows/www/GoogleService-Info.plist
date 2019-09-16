@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>18283000983-mrkooro40q0i6fpp3udqk9d6jlem9bn3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.18283000983-mrkooro40q0i6fpp3udqk9d6jlem9bn3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBttyjhFOOr0eOTSChUg6BA7qiT17wmX8M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>18283000983</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.cordova.gtareascordova</string>
+	<key>PROJECT_ID</key>
+	<string>gtareas-2ac28</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gtareas-2ac28.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:18283000983:ios:21c40cc9145f7161c225d2</string>
+	<key>DATABASE_URL</key>
+	<string>https://gtareas-2ac28.firebaseio.com</string>
+</dict>
+</plist>

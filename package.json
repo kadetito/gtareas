@@ -21,7 +21,6 @@
     "cordova-plugin-camera-preview": "git+https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git",
     "cordova-plugin-device": "^2.0.3",
     "cordova-plugin-network-information": "^2.0.2",
-    "cordova-plugin-progressdialog": "^2.0.2",
     "cordova-plugin-push": "0.0.1",
     "cordova-plugin-restful": "0.0.4",
     "cordova-plugin-statusbar": "^2.4.3",
@@ -39,7 +38,6 @@
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-progressdialog": {},
       "cordova-plugin-camera-preview": {},
       "cordova-plugin-device": {},
       "cordova-plugin-badge": {}

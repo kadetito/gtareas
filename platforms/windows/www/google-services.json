@@ -1,0 +1,47 @@
+﻿{
+  "project_info": {
+    "project_number": "18283000983",
+    "firebase_url": "https://gtareas-2ac28.firebaseio.com",
+    "project_id": "gtareas-2ac28",
+    "storage_bucket": "gtareas-2ac28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18283000983:android:511e9414a3dc5626c225d2",
+        "android_client_info": {
+          "package_name": "io.cordova.gtareascordova"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18283000983-s12fs5l1eh05vv6l38g4hkt06up2nkrq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo4B_0hbkG8a_K6VtdGLDugLV4MJRv9Ss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18283000983-s12fs5l1eh05vv6l38g4hkt06up2nkrq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "18283000983-mrkooro40q0i6fpp3udqk9d6jlem9bn3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.cordova.gtareascordova"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

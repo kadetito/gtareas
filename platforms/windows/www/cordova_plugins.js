@@ -53,14 +53,6 @@
       "runs": true
     },
     {
-      "id": "cordova-plugin-progressdialog.XYDialog",
-      "file": "plugins/cordova-plugin-progressdialog/www/plugins.XYDialog.js",
-      "pluginId": "cordova-plugin-progressdialog",
-      "clobbers": [
-        "cordova.plugin.progressDialog"
-      ]
-    },
-    {
       "id": "cordova-plugin-camera-preview.CameraPreview",
       "file": "plugins/cordova-plugin-camera-preview/www/CameraPreview.js",
       "pluginId": "cordova-plugin-camera-preview",
@@ -101,7 +93,6 @@
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-camera": "4.1.0",
     "cordova-plugin-statusbar": "2.4.3",
-    "cordova-plugin-progressdialog": "2.0.1",
     "cordova-plugin-camera-preview": "0.11.0",
     "cordova-plugin-device": "2.0.3",
     "cordova-plugin-badge": "0.8.8"

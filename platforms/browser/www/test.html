@@ -1,141 +1,103 @@
-<!DOCTYPE HTML>
+
+
+
+
+<!DOCTYPE html>
 <html>
-<head>
-	<title>Submitting SOAP Requests With jQuery</title>
-	<script type="text/javascript" src="jquery-2.2.4.min.js"></script>
-	<script type="text/javascript">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
+	<script src='js/jquery-2.2.4.min.js'></script> 
+	
 
-		// When the DOM is ready, initialize the script.
-		jQuery(function( $ ){
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-			// Get a handle on our SOAP template.
-			var soapTemplate = $( "#soap-template" );
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/loader.css">
+	<link rel="stylesheet" href="css/estilo.css">
+        <link href="angular/ionic/css/ionic.css" rel="stylesheet"/>
 
-			// Get a handle on our form.
-			var form = $( "form:first" );
+        <!-- ionic/angularjs js -->
+        <script src="angular/ionic/js/ionic.bundle.js"></script>
+        <script src="angular/ionic/js/angular/angular-resource.js"></script>
 
-			// Get a handle on our zip code input field.
-			var zip = $( "#zip" );
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="cordova.js"></script>        
+        <script type="text/javascript" src="js/PushNotification.js"></script>
+        
+<script src='js/notificaciones.js'></script>
+ <script type="text/javascript" src="js/confignotificaciones.js"></script>
 
-			// Get a hand on our city and state place holders.
-			var city = $( "#city" );
-			var state = $( "#state" );
+        <script type="text/javascript">
+
+            var ready = false;
+            function onNotificationGCMEvent(e) {
+
+                if (!ready) {
+                    setTimeout(function() {
+                        onNotificationGCMEvent(e);
+                    }, 1000);
+                    return;
+                }
+
+                try {
+                    var elem = angular.element(document.querySelector('[ng-controller]'));
+                    var injector = elem.injector();
+                    var notificationService = injector.get('NotificationService');
+                    notificationService.handleNotification(e);
+                } catch (e) {
+                    alert(e);
+                }
+            }
+
+            window.ionic.Platform.ready(function() {
+                angular.bootstrap(document, ['PushNotificationsApp']);
+                ready = true;                                
+            });
 
 
-			// Bind the form submission to re-route through our
-			// SOAP-based AJAX request.
-			form.submit(
-				function( event ){
-					// Prevent the default submit.
-					event.preventDefault();
-					event.stopPropagation();
+        </script>
 
-					// Create our SOAP body content based off of
-					// the template.
-					var soapBody = soapTemplate.html().replace(
-						new RegExp( "\\$\\{[^}]+\\}", "i" ),
-						zip.val()
-					);
+     <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/tether.min.js"></script>
+    </head>
+    <body ng-controller="AppController">
 
-					// Trim the SOAP body so that we don't get any
-					// XML prolog errors.
-					soapBody = $.trim( soapBody );
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">Ionic, Cordova & Push Notifications</h1>
+    </ion-header-bar>
 
-					// Post SOAP request.
-					$.ajax({
-						type: "post",
-						url: "http://www.webentorn.com/gtareas/frontend/www/soap_proxy.cfm",
-						contentType: "text/xml",
-						data: soapBody,
-						dataType: "xml",
-						processData: false,
-						beforeSend: function( xhr ){
-							// Pass the target URL onto the proxy.
-							xhr.setRequestHeader(
-								"SOAPTarget",
-								"http://www.webservicex.net/uszip.asmx"
-							);
-
-							// Pass the action onto the proxy.
-							xhr.setRequestHeader(
-								"SOAPAction",
-								"http://www.webserviceX.NET/GetInfoByZIP"
-							);
-						},
-						success: function( response ){
-							// Get a jQuery-ized version of the response.
-							var xml = $( response );
-
-							// Populate the city. NOTE: These
-							// node names are case-sensitive and
-							// have to be uppercase.
-							city.text(
-								xml.find( "CITY" ).text()
-							);
-
-							// Populate the state. NOTE: These
-							// node names are case-sensitive and
-							// have to be uppercase.
-							state.text(
-								xml.find( "STATE" ).text()
-							);
-						},
-						error: function(){
-							console.log( "ERROR", arguments );
-						}
-					});
-
-				}
-			);
-
-		});
-
-	</script>
-</head>
-<body>
-
-	<h1>
-		Submitting SOAP Requests With jQuery
-	</h1>
-
-	<form>
-
-		<p>
-			Zip Code:
-			<input id="zip" type="text" size="20" />
-			<input type="submit" value="Get Info" />
-		</p>
-
-		<p>
-			City: <span id="city"> ... </span><br />
-			State: <span id="state"> ... </span>
-		</p>
-
-	</form>
-
-	<!--
-		This is the SOAP template that we will use when making
-		our SOAP POST to the server (ColdFusion SOAP Proxy).
-	-->
-	<script id="soap-template" type="application/soap-template">
-
-		<?xml version="1.0" encoding="utf-8"?>
-		<soap:Envelope
-			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-			xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-
-			<soap:Body>
-
-				<GetInfoByZIP xmlns="http://www.webserviceX.NET">
-					<USZip>${zip}</USZip>
-				</GetInfoByZIP>
-
-			</soap:Body>
-
-		</soap:Envelope>
-
-	</script>
-
-</body>
+    <ion-content>
+        <div class="row">
+            <div class="col "><i class="{{status.networkicon}}"></i> Network status</div>
+        </div>
+        <div class="row">
+            <div class="col"><i class="{{status.thirddpartyservericon}}"></i> 3rd party server</div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="button button-outline {{status.button.disabled}} {{status.button.style}} ion-paper-airplane button-small" ng-click="sendNotification()"> Send notification to myself</button>
+            </div>
+        </div>        
+    </ion-content>
+    <div class="bar bar-footer bar-light">
+        <div class="title"><span class="{{status.style}}">{{status.text}}</span></div>
+    </div>
+<script type="text/javascript" src="cordova.js"></script>
+</body>    
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

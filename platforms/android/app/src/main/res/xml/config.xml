@@ -11,9 +11,6 @@
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="XYDialog">
-        <param name="android-package" value="org.apache.cordova.xydialog.XYDialog" />
-    </feature>
     <feature name="RESTful">
         <param name="android-package" value="cordova.plugin.restful.RESTful" />
     </feature>
@@ -35,6 +32,7 @@
         Rafa P
     </author>
     <content src="index.html" />
+    <gap:plugin name="cordova-plugin-badge" source="npm" version="0.8.8" />
     <config-file overwrite="true" parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
         <string>Allow the app to use your camera</string>
     </config-file>
