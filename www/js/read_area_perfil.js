@@ -46,20 +46,28 @@ var appp = {
 			
 			
 			//resizo la imagen al meterla en un canvas, determino el tamanio por css
-			window.onload = function() {
-				var canvas = document.getElementById('image');
-				var ctx = canvas.getContext('2d');
-				var img = new Image();
-				img.onload = function(){
-				canvas.width = img.naturalWidth
-				canvas.height = img.naturalHeight
-				ctx.drawImage(img, 0, 0);
-				}
-				img.src = val.foto;
-			}
+//			window.onload = function() {
+//				var canvas = document.getElementById('image');
+//				var ctx = canvas.getContext('2d');
+//				var img = new Image();
+//				img.onload = function(){
+//				canvas.width = img.naturalWidth
+//				canvas.height = img.naturalHeight
+//				ctx.drawImage(img, 0, 0);
+//				}
+//				img.src = val.foto;
+//			}
 			
 			
-			items.push('<div class="card"><div class="card-body"><div class="text-center"><canvas id="image"></canvas></div><ul><li>N&uacute;mero: ' + val.codigo_empleado + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel: ' + val.telefono_empleado + '</li><li>Usuario: ' + val.usuario_empleado + '</li><li>Password: ' + val.password_empleado + '</li></ul></div></div>');
+//			window.onload = function() {
+//			    var canvas = document.getElementById("image");
+//			    var ctx = canvas.getContext("2d");
+//			    var img = document.getElementById("scream");
+//			   ctx.drawImage(img, 10, 10);
+//			};
+			
+			
+			items.push('<div class="card"><div class="card-body"><div class="text-center"><img id="image" src="'+val.foto+'" /></div><ul><li>N&uacute;mero: ' + val.codigo_empleado + '</li><li>Nombre: ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</li><li>Tel: ' + val.telefono_empleado + '</li><li>Usuario: ' + val.usuario_empleado + '</li><li>Password: ' + val.password_empleado + '</li></ul></div></div>');
 
 			sidebaritem.push('<p>' + val.nombre + ' ' + val.apellido1 + '</p><p>Núm: ' + val.codigo_empleado + '</p>');
 
