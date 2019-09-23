@@ -9,13 +9,13 @@ $("#sending").click(function(){
        
         data: 
         { 
-    	    'usuarioempleado': $("#usuarioempleado").val(),
-            'passempleado': $("#passempleado").val()
+    	    'usuarioemp': $("#usuarioemp").val(),
+            'passemp': $("#passemp").val()
           },
         success: function(data) {
         	
-        	var u = $("#usuarioempleado").val();
-        	var p = $("#passempleado").val();
+        	var u = $("#usuarioemp").val();
+        	var p = $("#passemp").val();
         	
             var data = $.parseJSON(data);
 
