@@ -47,8 +47,16 @@
 }
 
     
+    $("#limpiar").click(function(){	
+
+    	const context = canvas.getContext('2d');
+
+    	context.clearRect(0, 0, canvas.width, canvas.height);
+	    
+    });
     
 function repinta(){
+
 canvas.width = canvas.width; // Limpia el lienzo
 
 context.strokeStyle = "#000000";

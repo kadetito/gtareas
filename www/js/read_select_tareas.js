@@ -1,6 +1,8 @@
 $(document).ready(function() { 
+//	e.preventDefault();
 	appp.readPostsX();
 	$(document).bind('deviceready', appp.onDeviceReady); 
+	
 });
 
 //identifico al empleado para mostrar sus tareas
@@ -29,17 +31,60 @@ var appp = {
 	},
 
 	onSuccess: function(datos) {
+
 		var selecttarea = [];
-		
-		selecttarea.push('<option value="">Seleccione la tarea</option>');
-		
+		selecttarea.push('<option value="0">Seleccione la tarea</option>');
 		$.each(datos, function(key, val){
-
 			selecttarea.push('<option value="' + val.id_tarea + '"> ' + val.codigo_tarea + ' ' + val.titulo + '</option>');
-
-		});
-		
+		});		
 		$('#selecttarea').html(selecttarea.join('<br/>'));
+		
+		
+					
+					$("#selecttarea").change(function(){	
+						
+								var dtarea = document.getElementById("selecttarea");
+								var dortarea = dtarea.options[dtarea.selectedIndex].value;
+								
+								
+					if(dortarea==0){
+						
+
+						
+						var dclien = document.getElementById("selectcliente");
+						  dclien.remove(dclien.selectedIndex);
+						  
+						//alert(dcliente);
+						
+						
+					} else {
+								$.ajax({
+									type: "GET",
+									dataType: "json",
+									url: "http://www.webentorn.com/gtareas/backoffice/json/listas_selects_clientes.json.php?id_empleado="+identificacion_emplead+"&id_tarea="+dortarea
+									,
+
+								success: function(datoscl) {
+									var selectcliente = [];
+									
+									$.each(datoscl, function(key, val){
+										if(val.empresa==''){
+											selectcliente.push('<option value="' + val.id_cliente + '"> ' + val.nombre + ' ' + val.apellido1 + ' ' + val.apellido2 + '</option>');
+										} else {
+											selectcliente.push('<option value="' + val.id_cliente + '"> ' + val.empresa + '</option>');	
+										}
+									});
+									$('#selectcliente').html(selectcliente.join('<br/>'));
+										}
+								});
+								
+					}						
+								
+								
+								
+							
+					});
+		
 	},
 
 //	onError: function(data, textStatus, errorThrown) {

@@ -1,6 +1,6 @@
 $(document).ready(function() { 
 	
-	$("#selecttarea").change(function(){
+//	$("#selecttarea").change(function(){
 //		localStorage.removeItem("identificadortr");
 		    var identificadortarea = $('select[id=selecttarea]').val();
 		    localStorage.setItem("identificadortr",identificadortarea);
@@ -8,7 +8,7 @@ $(document).ready(function() {
 			$(document).bind('deviceready', apppcl.onDeviceReady); 
 
 
-	});
+//	});
 	
 });
 

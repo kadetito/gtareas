@@ -33,13 +33,13 @@
 	var cparam = url.searchParams.get("param");
 	console.log(cparam);
     </script>	
-		<script src='js/read_tareas_partes.js'></script>  	
+
 		<script src='js/read_perfil.js'></script>
 		<script src='js/read_select_tareas.js'></script>
-		<script src='js/read_select_clientes.js'></script>
+<!-- 		<script src='js/read_select_clientes.js'></script> -->
 		<script src='js/crud_parte.js'></script>
 
-			<script src='js/getdate.js'></script>
+		<script src='js/getdate.js'></script>
 </head>
 
 <body class="pt-5" onload="initCanvas();"><div class="sk-fading-circle-back">
@@ -228,6 +228,7 @@
 					<div class="form-group">
 						<label for="firma">Firma cliente</label>
 						<div id="canvasDiv" style="width: 100%; height: 150px; background: #f5f5f6;"></div>
+						<div><a id="limpiar" class="btn btn-info mt-2">Limpiar firma</a></div>
 					</div>
 				</div>		
 				<div class="form-group">
@@ -236,10 +237,15 @@
 				</div>
 				<div class="form-group text-center">
 					<!-- <img style="width:60px; height:60px" id="imagen" src="/uploads/imagen.png" /> -->
-					<input type="submit" class="btn" id="guardar"  name="guardar" value="Crear parte" />
+					<input type="submit" class="btn " id="guardar"  name="guardar" value="Crear parte" />
 				</div>
 
-
+				<div class="mb-5">
+					<div class="pb-5">&nbsp;</div>
+				</div>
+				<div class="mb-5">
+					<div class="pb-5">&nbsp;</div>
+				</div>
 </form>
 </div>
 

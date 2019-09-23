@@ -25,17 +25,55 @@ $("#sending").click(function(){
 	            	    		sessionStorage.setItem("usuario", u);
 	            	    		sessionStorage.setItem("password", p);
 	            	    		sessionStorage.setItem("identificador", data.identificador);
-	            	    		window.location.href = "index.html";
+
+
+	            	    		let timerInterval
+	            	    		Swal.fire({
+	            	    		  title: 'Accediendo!',
+	            	    		  html: '...un momento, por favor.',
+	            	    		  timer: 1000,
+	            	    		  onBeforeOpen: () => {
+	            	    		    Swal.showLoading()
+	            	    		    timerInterval = setInterval(() => {
+	            	    		      Swal.getContent().querySelector('strong')
+//	            	    		        .textContent = Swal.getTimerLeft()
+	            	    		    }, 100)
+	            	    		  },
+	            	    		  onClose: () => {
+	            	    		    clearInterval(timerInterval)
+	            	    		  }
+	            	    		}).then((result) => {
+	            	    			window.location.href = "index.html";
+	            	    		  if (
+	            	    		    /* Read more about handling dismissals below */
+	            	    		    result.dismiss === Swal.DismissReason.timer
+	            	    		  ) {
+	            	    		    console.log('I was closed by the timer')
+	            	    		  }
+	            	    		})
+
+	            	    		
+	            	    		
+	            	    		
 	            	    	} else {
 	            	    		sessionStorage.removeItem("usuario");
 	            	    		sessionStorage.removeItem("password");
-	            	    		alert("los datos no son correctos");
+//	            	    		alert("los datos no son correctos");
+	            	    		
+	            	    		Swal.fire({
+	            	    			  title: 'Error!',
+	            	    			  text: 'Los datos de acceso no son correctos',
+	            	    			  type: 'error',
+	            	    			  confirmButtonText: 'Aceptar'
+	            	    			})
+	            	    			
+	            	    			
 	            	    	}
 
 	            	    });
 	            
 	            	
-	            	    throw new Error("Something went badly wrong!");
+//	            	    throw new Error("Something went badly wrong!");
 	    
 
         },
